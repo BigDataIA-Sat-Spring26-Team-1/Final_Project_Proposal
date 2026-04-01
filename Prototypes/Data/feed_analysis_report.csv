@@ -1,30 +1,30 @@
-Source,URL,Status,Has_WP_API,Has_Pagination,Action
-TechCrunch,https://techcrunch.com/feed/,Capped (< 24hr loop),True,True,Use native WordPress API for historical backfill
-The Verge,https://www.theverge.com/rss/index.xml,Capped (< 24hr loop),False,False,Requires polling every 3 hours via Airflow
-Biz & IT - Ars Technica,https://feeds.arstechnica.com/arstechnica/technology-lab,Full day coverage,N/A,N/A,Poll once per day
-WIRED,https://www.wired.com/feed/rss,Full day coverage,N/A,N/A,Poll once per day
-VentureBeat,https://venturebeat.com/feed/,Full day coverage,N/A,N/A,Poll once per day
-Crunch Hype,https://feeds.feedburner.com/TechCrunch/,Full day coverage,N/A,N/A,Poll once per day
-MIT News - Artificial intelligence,https://news.mit.edu/rss/topic/artificial-intelligence2,Full day coverage,N/A,N/A,Poll once per day
-AI,https://blog.google/technology/ai/rss/,Full day coverage,N/A,N/A,Poll once per day
-OpenAI News,https://openai.com/blog/rss.xml,Full day coverage,N/A,N/A,Poll once per day
-Google DeepMind News,https://www.deepmind.com/blog/rss.xml,Full day coverage,N/A,N/A,Poll once per day
-Hugging Face - Blog,https://huggingface.co/blog/feed.xml,Full day coverage,N/A,N/A,Poll once per day
-Lil'Log,https://lilianweng.github.io/index.xml,Full day coverage,N/A,N/A,Poll once per day
-MIT Technology Review,https://www.technologyreview.com/feed/,Full day coverage,N/A,N/A,Poll once per day
-IEEE Spectrum,https://spectrum.ieee.org/feeds/feed.rss,Full day coverage,N/A,N/A,Poll once per day
-Simon Willison's Weblog,https://simonwillison.net/atom/everything,Full day coverage,N/A,N/A,Poll once per day
-www.nature.com,https://www.nature.com/subjects/artificial-intelligence.rss,Broken / Empty,,,Check manually
-cs.AI updates on arXiv.org,http://export.arxiv.org/rss/cs.AI,Capped (< 24hr loop),False,False,Requires polling every 12 hours via Airflow
-cs.LG updates on arXiv.org,http://export.arxiv.org/rss/cs.LG,Capped (< 24hr loop),False,False,Requires polling every 12 hours via Airflow
-Hacker News,https://news.ycombinator.com/rss,Full day coverage,N/A,N/A,Poll once per day
-BBC News,https://feeds.bbci.co.uk/news/technology/rss.xml,Full day coverage,N/A,N/A,Poll once per day
-AI News & Artificial Intelligence | TechCrunch,https://techcrunch.com/category/artificial-intelligence/feed/,Full day coverage,N/A,N/A,Poll once per day
-Artificial Intelligence,https://aws.amazon.com/blogs/machine-learning/feed/,Full day coverage,N/A,N/A,Poll once per day
-HackerNoon - ai,https://hackernoon.com/tagged/ai/feed,Full day coverage,N/A,N/A,Poll once per day
-Bloomberg Technology,https://feeds.bloomberg.com/technology/news.rss,Capped (< 24hr loop),False,False,Requires polling every 20 hours via Airflow
-NYT > Technology,https://rss.nytimes.com/services/xml/rss/nyt/Technology.xml,Full day coverage,N/A,N/A,Poll once per day
-medium.com,https://medium.com/feed/artificialis,Broken / Empty,,,Check manually
-Google AI Blog,http://feeds.feedburner.com/blogspot/gJZg,Full day coverage,N/A,N/A,Poll once per day
-NVIDIA Technical Blog,https://developer.nvidia.com/blog/feed,Full day coverage,N/A,N/A,Poll once per day
-Microsoft Research,https://www.microsoft.com/en-us/research/feed/,Full day coverage,N/A,N/A,Poll once per day
+Source,URL,Fetch_Time_Sec,Total_Items,Has_Full_Content,Avg_Summary_Words,Avg_Content_Words,Oldest_Age_Hrs,Newest_Age_Hrs,Status,Has_WP_API,Has_Pagination,Action
+TechCrunch,https://techcrunch.com/feed/,0.23,20,False,20.0,0.0,24.0,0.1,Full day coverage,N/A,N/A,Poll once per day
+The Verge,https://www.theverge.com/rss/index.xml,0.27,10,True,56.0,304.0,4.0,0.7,Capped (<24h),False,False,Poll every 3 hours
+Biz & IT - Ars Technica,https://feeds.arstechnica.com/arstechnica/technology-lab,0.22,20,True,12.0,173.0,1127.1,24.3,Full day coverage,N/A,N/A,Poll once per day
+WIRED,https://www.wired.com/feed/rss,0.23,50,False,21.0,0.0,80.2,0.2,Full day coverage,N/A,N/A,Poll once per day
+VentureBeat,https://venturebeat.com/feed/,0.61,7,False,1534.0,0.0,27.7,1.2,Full day coverage,N/A,N/A,Poll once per day
+Crunch Hype,https://feeds.feedburner.com/TechCrunch/,0.86,21,False,2116.0,0.0,36678.6,2845.1,Full day coverage,N/A,N/A,Poll once per day
+MIT News - Artificial intelligence,https://news.mit.edu/rss/topic/artificial-intelligence2,0.28,50,True,22.0,963.0,1981.7,14.7,Full day coverage,N/A,N/A,Poll once per day
+AI,https://blog.google/technology/ai/rss/,0.92,20,True,18.0,11.0,815.8,5.2,Full day coverage,N/A,N/A,Poll once per day
+OpenAI News,https://openai.com/blog/rss.xml,0.95,901,False,26.0,0.0,90346.7,16.7,Full day coverage,N/A,N/A,Poll once per day
+Google DeepMind News,https://www.deepmind.com/blog/rss.xml,1.1,100,False,19.0,0.0,11928.7,147.3,Full day coverage,N/A,N/A,Poll once per day
+Hugging Face - Blog,https://huggingface.co/blog/feed.xml,0.31,755,False,0.0,0.0,53730.7,2.1,Full day coverage,N/A,N/A,Poll once per day
+Lil'Log,https://lilianweng.github.io/index.xml,0.16,51,False,130.0,0.0,17752962.7,8058.7,Full day coverage,N/A,N/A,Poll once per day
+MIT Technology Review,https://www.technologyreview.com/feed/,0.29,10,True,55.0,1596.0,105.7,6.6,Full day coverage,N/A,N/A,Poll once per day
+IEEE Spectrum,https://spectrum.ieee.org/feeds/feed.rss,0.51,30,False,1515.0,0.0,36338.5,5.7,Full day coverage,N/A,N/A,Poll once per day
+Simon Willison's Weblog,https://simonwillison.net/atom/everything,0.42,30,False,175.0,0.0,165.3,15.2,Full day coverage,N/A,N/A,Poll once per day
+www.nature.com,https://www.nature.com/subjects/artificial-intelligence.rss,1.26,0,,,,,,Empty,,,Check manually
+cs.AI updates on arXiv.org,http://export.arxiv.org/rss/cs.AI,0.56,330,False,186.0,0.0,14.7,14.7,Capped (<24h),False,False,Poll every 13 hours
+cs.LG updates on arXiv.org,http://export.arxiv.org/rss/cs.LG,0.45,265,False,186.0,0.0,14.7,14.7,Capped (<24h),False,False,Poll every 13 hours
+Hacker News,https://news.ycombinator.com/rss,0.53,30,False,2.0,0.0,131.1,0.4,Full day coverage,N/A,N/A,Poll once per day
+BBC News,https://feeds.bbci.co.uk/news/technology/rss.xml,0.21,20,False,16.0,0.0,1121.7,2.6,Full day coverage,N/A,N/A,Poll once per day
+AI News & Artificial Intelligence | TechCrunch,https://techcrunch.com/category/artificial-intelligence/feed/,0.19,20,False,22.0,0.0,54.2,0.1,Full day coverage,N/A,N/A,Poll once per day
+Artificial Intelligence,https://aws.amazon.com/blogs/machine-learning/feed/,0.4,20,True,52.0,2731.0,217.9,20.5,Full day coverage,N/A,N/A,Poll once per day
+HackerNoon - ai,https://hackernoon.com/tagged/ai/feed,0.26,50,True,42.0,42.0,208.9,3.8,Full day coverage,N/A,N/A,Poll once per day
+Bloomberg Technology,https://feeds.bloomberg.com/technology/news.rss,0.34,30,True,36.0,21.0,23.8,0.4,Capped (<24h),False,False,Poll every 21 hours
+NYT > Technology,https://rss.nytimes.com/services/xml/rss/nyt/Technology.xml,0.24,28,True,24.0,19.0,167.3,0.1,Full day coverage,N/A,N/A,Poll once per day
+medium.com,https://medium.com/feed/artificialis,0.26,0,,,,,,Empty,,,Check manually
+Google AI Blog,http://feeds.feedburner.com/blogspot/gJZg,0.47,25,True,1793.0,1793.0,19172.3,17592.7,Full day coverage,N/A,N/A,Poll once per day
+NVIDIA Technical Blog,https://developer.nvidia.com/blog/feed,0.45,100,True,38.0,111.0,2522.7,2.7,Full day coverage,N/A,N/A,Poll once per day
+Microsoft Research,https://www.microsoft.com/en-us/research/feed/,0.9,10,True,67.0,2560.0,986.7,2.7,Full day coverage,N/A,N/A,Poll once per day

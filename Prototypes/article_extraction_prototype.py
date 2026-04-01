@@ -1,38 +1,23 @@
 import json
 import os
 import time
+import random
 import pandas as pd
 import trafilatura
 from urllib.parse import urlparse
 
-def get_stratified_sample(articles, sample_size=50):
-    """Get a diverse sample of URLs across different sources."""
-    # Group by source
+def get_stratified_sample(articles, samples_per_source=3):
     by_source = {}
     for a in articles:
         src = a.get("source", "Unknown")
         if src not in by_source:
             by_source[src] = []
         by_source[src].append(a)
-        
-    sampled = []
-    # Pick round-robin from each source until we hit sample_size
-    sources = list(by_source.keys())
-    counts = {s: 0 for s in sources}
-    idx = 0
     
-    while len(sampled) < sample_size and len(sources) > 0:
-        src = sources[idx % len(sources)]
-        if counts[src] < len(by_source[src]):
-            sampled.append(by_source[src][counts[src]])
-            counts[src] += 1
-        else:
-            sources.remove(src)
-            if not sources:
-                break
-            continue # Don't advance idx so we don't skip
-        idx += 1
-        
+    sampled = []
+    for src, items in by_source.items():
+        # take up to samples_per_source
+        sampled.extend(items[:samples_per_source])
     return sampled
 
 def main():
@@ -41,105 +26,103 @@ def main():
     articles_path = os.path.join(data_dir, "articles.json")
     
     if not os.path.exists(articles_path):
-        print(f"File not found: {articles_path}. Please run Prototype 1 first.")
+        print(f"File not found: {articles_path}")
         return
 
     with open(articles_path, "r", encoding="utf-8") as f:
         all_articles = json.load(f)
 
-    # Get ~50 diverse articles to test
-    test_articles = get_stratified_sample(all_articles, sample_size=50)
+    # 5-10 articles per source
+    test_articles = get_stratified_sample(all_articles, samples_per_source=3)
     print(f"Testing extraction on {len(test_articles)} articles across {len(set(a['source'] for a in test_articles))} sources...")
 
-    results = []
-    extracted_data = []
+    raw_results = []
 
     for idx, article in enumerate(test_articles):
         url = article['link']
         source = article.get('source', 'Unknown')
-        print(f"[{idx+1}/{len(test_articles)}] Fetching: {url} (Source: {source})")
+        print(f"[{idx+1}/{len(test_articles)}] {source}: {url}")
         
         start_time = time.time()
         
+        # Adding a fake User-Agent string configuration to Trafilatura to prevent basic blocking
+        config = trafilatura.settings.use_config()
+        config.set('DEFAULT', 'USER_AGENT', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36')
+        
         # 1. Fetch the raw HTML
-        downloaded = trafilatura.fetch_url(url)
+        downloaded = trafilatura.fetch_url(url, config=config)
         
-        fetch_success = downloaded is not None
         status = "Success"
-        extracted_text = None
+        extracted_text = ""
+        fetch_time = time.time() - start_time
+        extract_time = 0.0
         char_count = 0
+        word_count = 0
         
-        if not fetch_success:
-            status = "Fetch Failed (Blocked/404)"
-            # Fallback to summary
-            extracted_text = article.get('summary', '')
-            char_count = len(extracted_text)
+        if downloaded is None:
+            status = "Blocked/404"
         else:
-            # 2. Extract the clean text
-            extracted_text = trafilatura.extract(
-                downloaded, 
-                include_comments=False, 
-                include_tables=False, 
-                no_fallback=False
-            )
+            e_start = time.time()
+            extracted_text = trafilatura.extract(downloaded, include_comments=False, config=config)
+            extract_time = time.time() - e_start
             
             if extracted_text and len(extracted_text) > 100:
                 char_count = len(extracted_text)
+                word_count = len(extracted_text.split())
                 status = "Success"
             else:
-                status = "Extraction Failed (Paywall/JS/Empty)"
-                # Fallback to summary
-                extracted_text = article.get('summary', '')
-                char_count = len(extracted_text)
+                status = "Paywall/No_Text"
                 
-        extract_time = time.time() - start_time
+        total_time = fetch_time + extract_time
         
-        results.append({
+        raw_results.append({
             "Source": source,
             "URL": url,
             "Status": status,
             "Char_Count": char_count,
-            "Extract_Time": round(extract_time, 2),
-            "Used_Fallback": status != "Success"
+            "Word_Count": word_count,
+            "Fetch_Time_Sec": fetch_time,
+            "Extract_Time_Sec": extract_time,
+            "Total_Time_Sec": total_time
         })
         
-        extracted_data.append({
-            "URL": url,
-            "Text": extracted_text,
-            "Status": status
-        })
-        
-        # Be nice
-        time.sleep(1)
+        # Sleep randomly between 1.5 to 3.5 seconds to avoid IP bans
+        time.sleep(random.uniform(1.5, 3.5))
 
+    df = pd.DataFrame(raw_results)
+    
+    # Generate aggregated source report
+    source_stats = []
+    for source, group in df.groupby("Source"):
+        total = len(group)
+        success_group = group[group["Status"] == "Success"]
+        success_count = len(success_group)
+        fail_count = total - success_count
+        success_rate = round((success_count / total) * 100, 1)
+        
+        avg_time = round(group["Total_Time_Sec"].mean(), 2)
+        avg_words = round(success_group["Word_Count"].mean()) if success_count > 0 else 0
+        avg_chars = round(success_group["Char_Count"].mean()) if success_count > 0 else 0
+        
+        source_stats.append({
+            "Source": source,
+            "Attempted": total,
+            "Success": success_count,
+            "Failed": fail_count,
+            "Success_%": success_rate,
+            "Avg_Latency_Sec": avg_time,
+            "Avg_Words": avg_words,
+            "Avg_Chars": avg_chars
+        })
+        
+    df_stats = pd.DataFrame(source_stats)
+    df_stats.to_csv(os.path.join(data_dir, "extraction_source_report.csv"), index=False)
+    df.to_csv(os.path.join(data_dir, "extraction_raw_logs.csv"), index=False)
+    
     print("\n" + "="*50)
-    print("EXTRACTION PROTOTYPE STATS")
+    print("EXTRACTION PROTOTYPE COMPLETE")
     print("="*50)
-    
-    df = pd.DataFrame(results)
-    
-    success_rate = (len(df[df['Status'] == 'Success']) / len(df)) * 100
-    avg_length = df[df['Status'] == 'Success']['Char_Count'].mean()
-    avg_time = df['Extract_Time'].mean()
-    
-    print(f"Overall Success Rate: {success_rate:.1f}%")
-    print(f"Average Extract Time: {avg_time:.2f} seconds")
-    print(f"Average Article Length (Successful ones): {avg_length:.0f} characters")
-    
-    print("\nFailures by Source:")
-    failures = df[df['Status'] != 'Success']
-    if not failures.empty:
-        fail_counts = failures.groupby(['Source', 'Status']).size().reset_index(name='Count')
-        print(fail_counts.to_string(index=False))
-    else:
-        print("None! 100% success.")
-
-    # Save reports
-    df.to_csv(os.path.join(data_dir, "extraction_report.csv"), index=False)
-    with open(os.path.join(data_dir, "extracted_texts.json"), "w", encoding="utf-8") as f:
-        json.dump(extracted_data, f, indent=2, ensure_ascii=False)
-        
-    print(f"\nSaved detailed reports to {data_dir}/extraction_report.csv and extracted_texts.json")
+    print(f"Saved aggregated report to {data_dir}/extraction_source_report.csv")
 
 if __name__ == "__main__":
     main()
