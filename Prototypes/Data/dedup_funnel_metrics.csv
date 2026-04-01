@@ -1,0 +1,6 @@
+Stage_Name,Article_Count,Description
+1. Total Ingested (Raw),3129,Combined payload of 2880 RSS articles and 249 Social Network posts.
+2. Target Validation,3066,"Filtered out irrelevant, broken, or purely text-based (non-link) Reddit posts."
+3. Exact URL Match Pass,3026,Removed 40 explicitly duplicated URLs.
+4. Semantic (TF-IDF) Pass,2907,Removed 119 semantic duplicates using Cosine Similarity > 0.65 on Titles.
+5. Final Pipeline Yield,2907,"The completely unique, mathematically deduplicated corpus of stories that will be passed to the LangGraph agents."

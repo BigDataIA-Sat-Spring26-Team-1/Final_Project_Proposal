@@ -1,0 +1,27 @@
+[
+  {
+    "Stage_Name": "1. Total Ingested (Raw)",
+    "Article_Count": 3129,
+    "Description": "Combined payload of 2880 RSS articles and 249 Social Network posts."
+  },
+  {
+    "Stage_Name": "2. Target Validation",
+    "Article_Count": 3066,
+    "Description": "Filtered out irrelevant, broken, or purely text-based (non-link) Reddit posts."
+  },
+  {
+    "Stage_Name": "3. Exact URL Match Pass",
+    "Article_Count": 3026,
+    "Description": "Removed 40 explicitly duplicated URLs."
+  },
+  {
+    "Stage_Name": "4. Semantic (TF-IDF) Pass",
+    "Article_Count": 2907,
+    "Description": "Removed 119 semantic duplicates using Cosine Similarity > 0.65 on Titles."
+  },
+  {
+    "Stage_Name": "5. Final Pipeline Yield",
+    "Article_Count": 2907,
+    "Description": "The completely unique, mathematically deduplicated corpus of stories that will be passed to the LangGraph agents."
+  }
+]
