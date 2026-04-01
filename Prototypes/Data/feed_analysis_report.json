@@ -1,0 +1,230 @@
+[
+  {
+    "Source": "TechCrunch",
+    "URL": "https://techcrunch.com/feed/",
+    "Status": "Capped (< 24hr loop)",
+    "Has_WP_API": true,
+    "Has_Pagination": true,
+    "Action": "Use native WordPress API for historical backfill"
+  },
+  {
+    "Source": "The Verge",
+    "URL": "https://www.theverge.com/rss/index.xml",
+    "Status": "Capped (< 24hr loop)",
+    "Has_WP_API": false,
+    "Has_Pagination": false,
+    "Action": "Requires polling every 3 hours via Airflow"
+  },
+  {
+    "Source": "Biz & IT - Ars Technica",
+    "URL": "https://feeds.arstechnica.com/arstechnica/technology-lab",
+    "Status": "Full day coverage",
+    "Has_WP_API": "N/A",
+    "Has_Pagination": "N/A",
+    "Action": "Poll once per day"
+  },
+  {
+    "Source": "WIRED",
+    "URL": "https://www.wired.com/feed/rss",
+    "Status": "Full day coverage",
+    "Has_WP_API": "N/A",
+    "Has_Pagination": "N/A",
+    "Action": "Poll once per day"
+  },
+  {
+    "Source": "VentureBeat",
+    "URL": "https://venturebeat.com/feed/",
+    "Status": "Full day coverage",
+    "Has_WP_API": "N/A",
+    "Has_Pagination": "N/A",
+    "Action": "Poll once per day"
+  },
+  {
+    "Source": "Crunch Hype",
+    "URL": "https://feeds.feedburner.com/TechCrunch/",
+    "Status": "Full day coverage",
+    "Has_WP_API": "N/A",
+    "Has_Pagination": "N/A",
+    "Action": "Poll once per day"
+  },
+  {
+    "Source": "MIT News - Artificial intelligence",
+    "URL": "https://news.mit.edu/rss/topic/artificial-intelligence2",
+    "Status": "Full day coverage",
+    "Has_WP_API": "N/A",
+    "Has_Pagination": "N/A",
+    "Action": "Poll once per day"
+  },
+  {
+    "Source": "AI",
+    "URL": "https://blog.google/technology/ai/rss/",
+    "Status": "Full day coverage",
+    "Has_WP_API": "N/A",
+    "Has_Pagination": "N/A",
+    "Action": "Poll once per day"
+  },
+  {
+    "Source": "OpenAI News",
+    "URL": "https://openai.com/blog/rss.xml",
+    "Status": "Full day coverage",
+    "Has_WP_API": "N/A",
+    "Has_Pagination": "N/A",
+    "Action": "Poll once per day"
+  },
+  {
+    "Source": "Google DeepMind News",
+    "URL": "https://www.deepmind.com/blog/rss.xml",
+    "Status": "Full day coverage",
+    "Has_WP_API": "N/A",
+    "Has_Pagination": "N/A",
+    "Action": "Poll once per day"
+  },
+  {
+    "Source": "Hugging Face - Blog",
+    "URL": "https://huggingface.co/blog/feed.xml",
+    "Status": "Full day coverage",
+    "Has_WP_API": "N/A",
+    "Has_Pagination": "N/A",
+    "Action": "Poll once per day"
+  },
+  {
+    "Source": "Lil'Log",
+    "URL": "https://lilianweng.github.io/index.xml",
+    "Status": "Full day coverage",
+    "Has_WP_API": "N/A",
+    "Has_Pagination": "N/A",
+    "Action": "Poll once per day"
+  },
+  {
+    "Source": "MIT Technology Review",
+    "URL": "https://www.technologyreview.com/feed/",
+    "Status": "Full day coverage",
+    "Has_WP_API": "N/A",
+    "Has_Pagination": "N/A",
+    "Action": "Poll once per day"
+  },
+  {
+    "Source": "IEEE Spectrum",
+    "URL": "https://spectrum.ieee.org/feeds/feed.rss",
+    "Status": "Full day coverage",
+    "Has_WP_API": "N/A",
+    "Has_Pagination": "N/A",
+    "Action": "Poll once per day"
+  },
+  {
+    "Source": "Simon Willison's Weblog",
+    "URL": "https://simonwillison.net/atom/everything",
+    "Status": "Full day coverage",
+    "Has_WP_API": "N/A",
+    "Has_Pagination": "N/A",
+    "Action": "Poll once per day"
+  },
+  {
+    "Source": "www.nature.com",
+    "URL": "https://www.nature.com/subjects/artificial-intelligence.rss",
+    "Status": "Broken / Empty",
+    "Action": "Check manually"
+  },
+  {
+    "Source": "cs.AI updates on arXiv.org",
+    "URL": "http://export.arxiv.org/rss/cs.AI",
+    "Status": "Capped (< 24hr loop)",
+    "Has_WP_API": false,
+    "Has_Pagination": false,
+    "Action": "Requires polling every 12 hours via Airflow"
+  },
+  {
+    "Source": "cs.LG updates on arXiv.org",
+    "URL": "http://export.arxiv.org/rss/cs.LG",
+    "Status": "Capped (< 24hr loop)",
+    "Has_WP_API": false,
+    "Has_Pagination": false,
+    "Action": "Requires polling every 12 hours via Airflow"
+  },
+  {
+    "Source": "Hacker News",
+    "URL": "https://news.ycombinator.com/rss",
+    "Status": "Full day coverage",
+    "Has_WP_API": "N/A",
+    "Has_Pagination": "N/A",
+    "Action": "Poll once per day"
+  },
+  {
+    "Source": "BBC News",
+    "URL": "https://feeds.bbci.co.uk/news/technology/rss.xml",
+    "Status": "Full day coverage",
+    "Has_WP_API": "N/A",
+    "Has_Pagination": "N/A",
+    "Action": "Poll once per day"
+  },
+  {
+    "Source": "AI News & Artificial Intelligence | TechCrunch",
+    "URL": "https://techcrunch.com/category/artificial-intelligence/feed/",
+    "Status": "Full day coverage",
+    "Has_WP_API": "N/A",
+    "Has_Pagination": "N/A",
+    "Action": "Poll once per day"
+  },
+  {
+    "Source": "Artificial Intelligence",
+    "URL": "https://aws.amazon.com/blogs/machine-learning/feed/",
+    "Status": "Full day coverage",
+    "Has_WP_API": "N/A",
+    "Has_Pagination": "N/A",
+    "Action": "Poll once per day"
+  },
+  {
+    "Source": "HackerNoon - ai",
+    "URL": "https://hackernoon.com/tagged/ai/feed",
+    "Status": "Full day coverage",
+    "Has_WP_API": "N/A",
+    "Has_Pagination": "N/A",
+    "Action": "Poll once per day"
+  },
+  {
+    "Source": "Bloomberg Technology",
+    "URL": "https://feeds.bloomberg.com/technology/news.rss",
+    "Status": "Capped (< 24hr loop)",
+    "Has_WP_API": false,
+    "Has_Pagination": false,
+    "Action": "Requires polling every 20 hours via Airflow"
+  },
+  {
+    "Source": "NYT > Technology",
+    "URL": "https://rss.nytimes.com/services/xml/rss/nyt/Technology.xml",
+    "Status": "Full day coverage",
+    "Has_WP_API": "N/A",
+    "Has_Pagination": "N/A",
+    "Action": "Poll once per day"
+  },
+  {
+    "Source": "medium.com",
+    "URL": "https://medium.com/feed/artificialis",
+    "Status": "Broken / Empty",
+    "Action": "Check manually"
+  },
+  {
+    "Source": "Google AI Blog",
+    "URL": "http://feeds.feedburner.com/blogspot/gJZg",
+    "Status": "Full day coverage",
+    "Has_WP_API": "N/A",
+    "Has_Pagination": "N/A",
+    "Action": "Poll once per day"
+  },
+  {
+    "Source": "NVIDIA Technical Blog",
+    "URL": "https://developer.nvidia.com/blog/feed",
+    "Status": "Full day coverage",
+    "Has_WP_API": "N/A",
+    "Has_Pagination": "N/A",
+    "Action": "Poll once per day"
+  },
+  {
+    "Source": "Microsoft Research",
+    "URL": "https://www.microsoft.com/en-us/research/feed/",
+    "Status": "Full day coverage",
+    "Has_WP_API": "N/A",
+    "Has_Pagination": "N/A",
+    "Action": "Poll once per day"
+  }
+]

@@ -25,7 +25,17 @@ RSS_FEEDS = [
     "https://www.nature.com/subjects/artificial-intelligence.rss",
     "http://export.arxiv.org/rss/cs.AI",
     "http://export.arxiv.org/rss/cs.LG",
-    "https://news.ycombinator.com/rss"
+    "https://news.ycombinator.com/rss",
+    "https://feeds.bbci.co.uk/news/technology/rss.xml",
+    "https://techcrunch.com/category/artificial-intelligence/feed/",
+    "https://aws.amazon.com/blogs/machine-learning/feed/",
+    "https://hackernoon.com/tagged/ai/feed",
+    "https://feeds.bloomberg.com/technology/news.rss",
+    "https://rss.nytimes.com/services/xml/rss/nyt/Technology.xml",
+    "https://medium.com/feed/artificialis",
+    "http://feeds.feedburner.com/blogspot/gJZg",
+    "https://developer.nvidia.com/blog/feed",
+    "https://www.microsoft.com/en-us/research/feed/"
 ]
 
 def normalize_url(url):
@@ -160,14 +170,21 @@ def main():
     overall_avg_summary = sum([a["summary_length"] for a in all_articles]) / len(all_articles) if all_articles else 0
     print(f"Overall Average Summary Length (chars): {overall_avg_summary:.0f}")
 
+    import os
+    script_dir = os.path.dirname(os.path.abspath(__file__))
+    data_dir = os.path.join(script_dir, "Data")
+    os.makedirs(data_dir, exist_ok=True)
+
     # Save to JSON
-    with open("articles.json", "w", encoding="utf-8") as f:
+    json_path = os.path.join(data_dir, "articles.json")
+    with open(json_path, "w", encoding="utf-8") as f:
         json.dump(unique_articles, f, indent=2, ensure_ascii=False)
         
     # Save to CSV
+    csv_path = os.path.join(data_dir, "articles.csv")
     df = pd.DataFrame(unique_articles)
-    df.to_csv("articles.csv", index=False)
-    print(f"\nSaved {len(unique_articles)} articles to articles.json and articles.csv")
+    df.to_csv(csv_path, index=False)
+    print(f"\nSaved {len(unique_articles)} articles to {data_dir}")
 
 if __name__ == "__main__":
     main()
