@@ -1,0 +1,24 @@
+{
+  "verdict": "reject",
+  "issues": [
+    {
+      "issue_type": "hallucination",
+      "description": "The draft summary states that Slack has been acquired by Apple, which is not mentioned in the original source.",
+      "severity": "high",
+      "suggested_fix": "Remove the acquisition statement and replace it with information regarding the new capabilities for Slackbot."
+    },
+    {
+      "issue_type": "factual_error",
+      "description": "The draft summary claims a price of $500 billion for the acquisition, but this is not supported by the original text.",
+      "severity": "high",
+      "suggested_fix": "Eliminate the acquisition price and replace it with factual content related to the 30 new AI features announced."
+    },
+    {
+      "issue_type": "factual_error",
+      "description": "The claim that this move will compromise all existing developer integrations is not supported by the original source.",
+      "severity": "high",
+      "suggested_fix": "Adjust this statement or provide evidence from credible sources to support it."
+    }
+  ],
+  "editorial_note": "The draft summary contains multiple major inaccuracies and does not align with the original article's focus on Slack's new AI features."
+}
