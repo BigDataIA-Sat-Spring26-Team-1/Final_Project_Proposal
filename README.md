@@ -206,7 +206,7 @@ The platform follows a four-layer architecture: Ingestion Layer → Intelligence
 
 #### System Architecture Diagram
 
-![CurateAI System Architecture](./architecture_diagram.png)
+![CurateAI System Architecture](./architecture_diagram.jpeg)
 
 #### Data Flow Diagram (DFD)
 
