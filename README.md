@@ -22,8 +22,9 @@ WE ATTEST THAT WE HAVEN'T USED ANY OTHER STUDENTS' WORK IN OUR ASSIGNMENT AND AB
 
 [Project Video Walkthrough](https://drive.google.com/file/d/14iWDaOqMG06Zw6rccs2TZx-MUULP3CEn/view?usp=sharing)
 
-### CodeLab Link
-[Project Technical Manual](https://docs.google.com/document/d/1bYUfbR4-ZV_iOEVfoANtoq9ZSuC_6JF3/edit)
+**CodeLab Link**:[Project Technical Manual](https://docs.google.com/document/d/1evchjp4wjeW2xveMD2m7ZahtZrTQk54_EHv5XjuBaTE/edit?tab=t.0)
+
+**Codelabs Guide**: [Detailed Step-by-Step Walkthrough](https://codelabs-preview.appspot.com/?file_id=1evchjp4wjeW2xveMD2m7ZahtZrTQk54_EHv5XjuBaTE)
 
 ---
 
