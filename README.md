@@ -257,42 +257,42 @@ The following visualizations are generated from our prototype benchmark data:
 **Figure 1 — Data Ingestion Funnel:**
 Shows the complete data reduction pipeline from 3,129 raw articles to the final clean corpus, with percentage reduction at each stage.
 
-![Ingestion Funnel](./01_ingestion_funnel.png)
+![Ingestion Funnel](./Picture1.png)
 
 **Figure 2 — Deduplication: TF-IDF vs Sentence-Transformer Vectors:**
 Side-by-side comparison proving our architectural decision. Vectors catch 73% more semantic duplicates than keyword-based TF-IDF.
 
-![Dedup Comparison](./02_dedup_comparison.png)
+![Dedup Comparison](./Picture2.png)
 
 **Figure 3 — Full-Text Extraction Success Rate by Source:**
 Validates trafilatura reliability across all 22+ sources. 82% of sources extract at 100%; 4 paywalled sources (Bloomberg, NYT, OpenAI, VentureBeat) fail gracefully with RSS summary fallback.
 
-![Extraction Success](./03_extraction_success.png)
+![Extraction Success](./Picture3.png)
 
 **Figure 4 — Article Volume by RSS Feed Source:**
 Shows the distribution of articles across our 25+ feed sources, with ArXiv and OpenAI Blog contributing the highest volumes.
 
-![Articles Per Feed](./04_articles_per_feed.png)
+![Articles Per Feed](./Picture4.png)
 
 **Figure 5 — Full-Text Extraction Latency by Source:**
 Validates that extraction meets our <0.4s target for the majority of sources. Only NVIDIA Blog (1.8s) and Microsoft Research (0.8s) exceed the threshold.
 
-![Extraction Latency](./05_extraction_latency.png)
+![Extraction Latency](./Picture5.png)
 
 **Figure 6 — Social Platform Metrics (Reddit + Hacker News):**
 Left: Post quality retention rate after filtering (r/technology and r/LocalLLaMA at 100%). Right: Community engagement signals on log scale (r/technology dominates in upvotes, HN in discussion depth).
 
-![Social Metrics](./06_social_metrics.png)
+![Social Metrics](./Picture6.png)
 
 **Figure 7 — LLM Cost Scaling: Per-User vs Persona-First Cache:**
 The critical scalability proof. Per-user generation costs scale linearly (O(n)), while persona-first caching remains flat regardless of user count — achieving 98% cost savings at 10,000 users.
 
-![Cost Comparison](./07_cost_comparison.png)
+![Cost Comparison](./Picture7.png)
 
 **Figure 8 — Dual-Layer Personalization: Highlights + Niche Gems:**
 Validates that different personas receive meaningfully different content. Only 20% overlap in the Niche Gems section between Researcher and Investor profiles.
 
-![Persona Overlap](./08_persona_overlap.png)
+![Persona Overlap](./Picture8.png)
 
 ### 5.4 Data Processing & Transformation
 
