@@ -1,0 +1,28 @@
+Source,Attempted,Success,Failed,Success_%,Avg_Latency_Sec,Avg_Words,Avg_Chars
+AI,3,3,0,100.0,0.18,538,3332
+AI News & Artificial Intelligence | TechCrunch,3,3,0,100.0,0.1,722,4579
+Artificial Intelligence,3,3,0,100.0,0.19,3089,21571
+BBC News,3,3,0,100.0,0.13,345,2091
+Biz & IT - Ars Technica,3,3,0,100.0,0.18,328,2152
+Bloomberg Technology,3,0,3,0.0,0.18,0,0
+Crunch Hype,3,3,0,100.0,0.2,3576,24684
+Google AI Blog,3,3,0,100.0,0.36,1446,9892
+Google DeepMind News,3,3,0,100.0,0.37,693,4641
+Hacker News,3,3,0,100.0,0.49,1447,9221
+HackerNoon - ai,3,3,0,100.0,0.15,70,459
+Hugging Face - Blog,3,3,0,100.0,0.16,1568,10904
+IEEE Spectrum,3,3,0,100.0,0.15,2544,15435
+Lil'Log,3,3,0,100.0,0.18,5313,34481
+MIT News - Artificial intelligence,3,3,0,100.0,0.12,1183,7621
+MIT Technology Review,3,3,0,100.0,0.12,1309,8270
+Microsoft Research,3,3,0,100.0,0.8,1078,7069
+NVIDIA Technical Blog,3,3,0,100.0,1.8,1489,10131
+NYT > Technology,3,0,3,0.0,0.14,0,0
+OpenAI News,3,0,3,0.0,0.13,0,0
+Simon Willison's Weblog,3,3,0,100.0,0.11,92,572
+TechCrunch,3,3,0,100.0,0.1,516,3278
+The Verge,3,3,0,100.0,0.13,1027,6041
+VentureBeat,3,0,3,0.0,20.16,0,0
+WIRED,3,3,0,100.0,0.29,2811,15911
+cs.AI updates on arXiv.org,3,3,0,100.0,0.1,413,2991
+cs.LG updates on arXiv.org,3,3,0,100.0,0.12,423,3117

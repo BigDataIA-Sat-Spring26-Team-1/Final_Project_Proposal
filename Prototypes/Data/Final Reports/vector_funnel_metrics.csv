@@ -1,0 +1,5 @@
+Metric,Value
+Total Ingested,2880
+URL Uniques,2880
+Vector Uniques (1k Sample),794
+Reduction Rate (Vector),20.6%

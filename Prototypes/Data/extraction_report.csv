@@ -1,0 +1,51 @@
+Source,URL,Status,Char_Count,Extract_Time,Used_Fallback
+TechCrunch,https://techcrunch.com/2026/04/01/cameo-partners-with-tiktok-to-boost-popularity/,Success,3071,0.18,False
+The Verge,https://www.theverge.com/tech/905398/apple-iphone-anniversary-jobs-release,Success,8620,0.26,False
+Biz & IT - Ars Technica,https://arstechnica.com/security/2026/03/new-quantum-computing-advances-heighten-threat-to-elliptic-curve-cryptosystems/,Success,2175,0.34,False
+WIRED,https://www.wired.com/story/nothing-watch-3-pro-deal-426/,Success,1952,0.31,False
+VentureBeat,https://venturebeat.com/security/rsac-2026-agentic-soc-agent-telemetry-security-gap,Fetch Failed (Blocked/404),13527,30.25,True
+Crunch Hype,https://techncruncher.blogspot.com/2025/12/how-i-get-free-traffic-from-chatgpt-in.html,Success,54661,0.43,False
+MIT News - Artificial intelligence,https://news.mit.edu/2026/preview-tool-helps-makers-visualize-3d-printed-objects-0401,Success,6578,0.12,False
+AI,https://blog.google/products-and-platforms/products/earth/satellite-imagery-brazilian-deforestation/,Success,1096,0.4,False
+OpenAI News,https://openai.com/index/gradient-labs,Fetch Failed (Blocked/404),150,0.18,True
+Google DeepMind News,https://deepmind.google/blog/protecting-people-from-harmful-manipulation/,Success,6259,0.8,False
+Hugging Face - Blog,https://huggingface.co/blog/Hcompany/holo3,Success,4624,0.18,False
+Lil'Log,https://lilianweng.github.io/posts/2025-05-01-thinking/,Success,22100,0.28,False
+MIT Technology Review,https://www.technologyreview.com/2026/04/01/1134993/the-download-gig-workers-training-humanoids-better-ai-benchmarks/,Success,6646,0.22,False
+IEEE Spectrum,https://spectrum.ieee.org/exoskeleton-user-experience,Success,29619,0.3,False
+Simon Willison's Weblog,https://simonwillison.net/2026/Apr/1/datasette-extract/#atom-everything,Success,472,0.16,False
+cs.AI updates on arXiv.org,https://arxiv.org/abs/2603.28902,Success,2712,0.2,False
+cs.LG updates on arXiv.org,https://arxiv.org/abs/2603.28916,Success,3434,0.05,False
+Hacker News,https://blog.cloudflare.com/emdash-wordpress/,Success,17146,0.32,False
+BBC News,https://www.bbc.com/news/articles/cx24e1nryn9o?at_medium=RSS&at_campaign=rss,Success,1870,0.23,False
+AI News & Artificial Intelligence | TechCrunch,https://techcrunch.com/2026/03/31/alexa-plus-new-food-ordering-experiences-with-uber-eats-and-grubhub/,Success,2240,0.07,False
+Artificial Intelligence,https://aws.amazon.com/blogs/machine-learning/build-reliable-ai-agents-with-amazon-bedrock-agentcore-evaluations/,Success,32031,0.28,False
+HackerNoon - ai,https://hackernoon.com/the-app-that-lets-ai-agents-hire-you-human-api-goes-mobile-with-a-$65mn-long-on-human-data?source=rss,Success,360,0.2,False
+Bloomberg Technology,https://www.bloomberg.com/news/videos/2026-04-01/us-needs-to-invest-more-in-ai-buildout-cato-s-frazier-video,Fetch Failed (Blocked/404),358,0.2,True
+NYT > Technology,https://www.nytimes.com/2026/04/01/technology/apple-employee-50-years.html,Fetch Failed (Blocked/404),167,0.16,True
+Google AI Blog,http://blog.research.google/2024/03/generative-ai-to-quantify-uncertainty.html,Success,11398,1.35,False
+NVIDIA Technical Blog,https://developer.nvidia.com/blog/cuda-tile-programming-now-available-for-basic/,Success,8203,0.25,False
+Microsoft Research,https://www.microsoft.com/en-us/research/blog/adele-predicting-and-explaining-ai-performance-across-tasks/,Success,6886,0.91,False
+TechCrunch,https://techcrunch.com/2026/04/01/whatsapp-notifies-hundreds-of-users-who-installed-a-fake-app-that-was-actually-government-spyware/,Success,2590,0.05,False
+The Verge,https://www.theverge.com/tldr/904346/april-fools-day-2026-pranks-jokes-best-worst,Success,6116,0.08,False
+Biz & IT - Ars Technica,https://arstechnica.com/security/2026/03/google-bumps-up-q-day-estimate-to-2029-far-sooner-than-previously-thought/,Success,1910,0.29,False
+WIRED,https://www.wired.com/story/the-new-era-of-militia-influencers/,Success,10514,0.17,False
+VentureBeat,https://venturebeat.com/orchestration/the-end-of-shadow-ai-at-enterprises-kilo-launches-kiloclaw-for-organizations,Fetch Failed (Blocked/404),11550,0.04,True
+Crunch Hype,https://techncruncher.blogspot.com/2025/01/top-10-ai-tools-that-will-transform.html,Success,9628,0.15,False
+MIT News - Artificial intelligence,https://news.mit.edu/2026/mit-researchers-use-ai-uncover-atomic-defects-materials-0330,Success,7086,0.08,False
+AI,https://blog.google/innovation-and-ai/technology/ai/google-ai-updates-march-2026/,Success,7548,0.15,False
+OpenAI News,https://openai.com/index/accelerating-the-next-phase-ai,Fetch Failed (Blocked/404),171,0.18,True
+Google DeepMind News,https://deepmind.google/blog/lyria-3-pro-create-longer-tracks-in-more/,Success,4267,0.39,False
+Hugging Face - Blog,https://huggingface.co/blog/tiiuae/falcon-perception,Success,19083,0.17,False
+Lil'Log,https://lilianweng.github.io/posts/2024-11-28-reward-hacking/,Success,44224,0.14,False
+MIT Technology Review,https://www.technologyreview.com/2026/04/01/1134863/humanoid-data-training-gig-economy-2026-breakthrough-technology/,Success,10273,0.08,False
+IEEE Spectrum,https://spectrum.ieee.org/deep-sea-submersible,Success,9063,0.08,False
+Simon Willison's Weblog,https://simonwillison.net/2026/Apr/1/datasette-enrichments-llm/#atom-everything,Success,476,0.2,False
+cs.AI updates on arXiv.org,https://arxiv.org/abs/2603.28906,Success,3288,0.06,False
+cs.LG updates on arXiv.org,https://arxiv.org/abs/2603.28937,Success,3175,0.05,False
+Hacker News,https://engineering.fb.com/2026/03/30/data-center-engineering/ai-for-american-produced-cement-and-concrete/,Success,9561,0.18,False
+BBC News,https://www.bbc.com/news/articles/ce8l2q5yq51o?at_medium=RSS&at_campaign=rss,Success,2431,0.07,False
+AI News & Artificial Intelligence | TechCrunch,https://techcrunch.com/2026/03/31/nomadic-raises-8-4-million-to-wrangle-the-data-pouring-off-avs/,Success,5068,0.05,False
+Artificial Intelligence,https://aws.amazon.com/blogs/machine-learning/build-a-finops-agent-using-amazon-bedrock-agentcore/,Success,13664,0.18,False
+HackerNoon - ai,https://hackernoon.com/how-coinfellos-minchi-park-built-the-trust-layer-500-million-crypto-users-have-been-waiting-for?source=rss,Fetch Failed (Blocked/404),851,0.04,True
+Bloomberg Technology,https://www.bloomberg.com/news/videos/2026-04-01/nasa-artemis-ii-is-part-of-the-latest-space-race-video,Fetch Failed (Blocked/404),312,0.29,True

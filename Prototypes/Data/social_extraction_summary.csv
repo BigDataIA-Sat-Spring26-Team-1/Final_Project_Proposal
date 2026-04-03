@@ -1,0 +1,6 @@
+Source,Attempted_Links,Successful_Extractions,Failed,Success_%
+Hacker News,16,15,1,93.8
+Reddit (r/LocalLLaMA),1,1,0,100.0
+Reddit (r/artificial),1,1,0,100.0
+Reddit (r/programming),5,5,0,100.0
+Reddit (r/technology),7,3,4,42.9

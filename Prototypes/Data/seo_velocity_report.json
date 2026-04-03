@@ -1,0 +1,362 @@
+[
+  {
+    "entity": "AI",
+    "current_window": 203,
+    "previous_window": 476,
+    "total_mentions": 679,
+    "velocity": "-57.4%",
+    "status": "DECLINING"
+  },
+  {
+    "entity": "OpenAI",
+    "current_window": 9,
+    "previous_window": 219,
+    "total_mentions": 228,
+    "velocity": "-95.9%",
+    "status": "DECLINING"
+  },
+  {
+    "entity": "GPT",
+    "current_window": 9,
+    "previous_window": 175,
+    "total_mentions": 184,
+    "velocity": "-94.9%",
+    "status": "DECLINING"
+  },
+  {
+    "entity": "Hugging Face",
+    "current_window": 117,
+    "previous_window": 34,
+    "total_mentions": 151,
+    "velocity": "+244.1%",
+    "status": "SURGING"
+  },
+  {
+    "entity": "LLM",
+    "current_window": 107,
+    "previous_window": 40,
+    "total_mentions": 147,
+    "velocity": "+167.5%",
+    "status": "SURGING"
+  },
+  {
+    "entity": "NVIDIA",
+    "current_window": 64,
+    "previous_window": 11,
+    "total_mentions": 75,
+    "velocity": "+481.8%",
+    "status": "SURGING"
+  },
+  {
+    "entity": "LLMs",
+    "current_window": 33,
+    "previous_window": 22,
+    "total_mentions": 55,
+    "velocity": "+50.0%",
+    "status": "STABLE"
+  },
+  {
+    "entity": "Intel",
+    "current_window": 31,
+    "previous_window": 11,
+    "total_mentions": 42,
+    "velocity": "+181.8%",
+    "status": "SURGING"
+  },
+  {
+    "entity": "API",
+    "current_window": 10,
+    "previous_window": 27,
+    "total_mentions": 37,
+    "velocity": "-63.0%",
+    "status": "DECLINING"
+  },
+  {
+    "entity": "GPU",
+    "current_window": 28,
+    "previous_window": 8,
+    "total_mentions": 36,
+    "velocity": "+250.0%",
+    "status": "SURGING"
+  },
+  {
+    "entity": "Google",
+    "current_window": 13,
+    "previous_window": 16,
+    "total_mentions": 29,
+    "velocity": "-18.8%",
+    "status": "STABLE"
+  },
+  {
+    "entity": "RL",
+    "current_window": 12,
+    "previous_window": 16,
+    "total_mentions": 28,
+    "velocity": "-25.0%",
+    "status": "DECLINING"
+  },
+  {
+    "entity": "ML",
+    "current_window": 21,
+    "previous_window": 5,
+    "total_mentions": 26,
+    "velocity": "+320.0%",
+    "status": "SURGING"
+  },
+  {
+    "entity": "Hugging Face Hub",
+    "current_window": 13,
+    "previous_window": 4,
+    "total_mentions": 17,
+    "velocity": "+225.0%",
+    "status": "SURGING"
+  },
+  {
+    "entity": "Claude",
+    "current_window": 11,
+    "previous_window": 5,
+    "total_mentions": 16,
+    "velocity": "+120.0%",
+    "status": "SURGING"
+  },
+  {
+    "entity": "VLM",
+    "current_window": 6,
+    "previous_window": 9,
+    "total_mentions": 15,
+    "velocity": "-33.3%",
+    "status": "DECLINING"
+  },
+  {
+    "entity": "PyTorch",
+    "current_window": 11,
+    "previous_window": 3,
+    "total_mentions": 14,
+    "velocity": "+266.7%",
+    "status": "SURGING"
+  },
+  {
+    "entity": "RAG",
+    "current_window": 14,
+    "previous_window": 0,
+    "total_mentions": 14,
+    "velocity": "+1400.0%",
+    "status": "SURGING"
+  },
+  {
+    "entity": "Microsoft",
+    "current_window": 4,
+    "previous_window": 9,
+    "total_mentions": 13,
+    "velocity": "-55.6%",
+    "status": "DECLINING"
+  },
+  {
+    "entity": "Amazon Bedrock",
+    "current_window": 12,
+    "previous_window": 1,
+    "total_mentions": 13,
+    "velocity": "+1100.0%",
+    "status": "SURGING"
+  },
+  {
+    "entity": "AWS",
+    "current_window": 10,
+    "previous_window": 2,
+    "total_mentions": 12,
+    "velocity": "+400.0%",
+    "status": "SURGING"
+  },
+  {
+    "entity": "CPU",
+    "current_window": 11,
+    "previous_window": 1,
+    "total_mentions": 12,
+    "velocity": "+1000.0%",
+    "status": "SURGING"
+  },
+  {
+    "entity": "Falcon",
+    "current_window": 6,
+    "previous_window": 5,
+    "total_mentions": 11,
+    "velocity": "+20.0%",
+    "status": "STABLE"
+  },
+  {
+    "entity": "Inference Endpoints",
+    "current_window": 6,
+    "previous_window": 3,
+    "total_mentions": 9,
+    "velocity": "+100.0%",
+    "status": "SURGING"
+  },
+  {
+    "entity": "MIT",
+    "current_window": 1,
+    "previous_window": 7,
+    "total_mentions": 8,
+    "velocity": "-85.7%",
+    "status": "DECLINING"
+  },
+  {
+    "entity": "Healthcare",
+    "current_window": 5,
+    "previous_window": 3,
+    "total_mentions": 8,
+    "velocity": "+66.7%",
+    "status": "SURGING"
+  },
+  {
+    "entity": "AMD",
+    "current_window": 5,
+    "previous_window": 3,
+    "total_mentions": 8,
+    "velocity": "+66.7%",
+    "status": "SURGING"
+  },
+  {
+    "entity": "Amazon SageMaker",
+    "current_window": 8,
+    "previous_window": 0,
+    "total_mentions": 8,
+    "velocity": "+800.0%",
+    "status": "SURGING"
+  },
+  {
+    "entity": "Hugging Face Transformers",
+    "current_window": 7,
+    "previous_window": 0,
+    "total_mentions": 7,
+    "velocity": "+700.0%",
+    "status": "SURGING"
+  },
+  {
+    "entity": "AGI",
+    "current_window": 0,
+    "previous_window": 6,
+    "total_mentions": 6,
+    "velocity": "-100.0%",
+    "status": "DECLINING"
+  },
+  {
+    "entity": "Hugging Face Inference Providers",
+    "current_window": 0,
+    "previous_window": 6,
+    "total_mentions": 6,
+    "velocity": "-100.0%",
+    "status": "DECLINING"
+  },
+  {
+    "entity": "Society Newsletter",
+    "current_window": 6,
+    "previous_window": 0,
+    "total_mentions": 6,
+    "velocity": "+600.0%",
+    "status": "SURGING"
+  },
+  {
+    "entity": "Llama 2",
+    "current_window": 6,
+    "previous_window": 0,
+    "total_mentions": 6,
+    "velocity": "+600.0%",
+    "status": "SURGING"
+  },
+  {
+    "entity": "TensorFlow",
+    "current_window": 6,
+    "previous_window": 0,
+    "total_mentions": 6,
+    "velocity": "+600.0%",
+    "status": "SURGING"
+  },
+  {
+    "entity": "CLIP",
+    "current_window": 3,
+    "previous_window": 2,
+    "total_mentions": 5,
+    "velocity": "+50.0%",
+    "status": "STABLE"
+  },
+  {
+    "entity": "Hugging Face Inference Endpoints",
+    "current_window": 5,
+    "previous_window": 0,
+    "total_mentions": 5,
+    "velocity": "+500.0%",
+    "status": "SURGING"
+  },
+  {
+    "entity": "Hugging Face Spaces",
+    "current_window": 5,
+    "previous_window": 0,
+    "total_mentions": 5,
+    "velocity": "+500.0%",
+    "status": "SURGING"
+  },
+  {
+    "entity": "Put AI",
+    "current_window": 0,
+    "previous_window": 4,
+    "total_mentions": 4,
+    "velocity": "-100.0%",
+    "status": "DECLINING"
+  },
+  {
+    "entity": "DeepSpeed",
+    "current_window": 4,
+    "previous_window": 0,
+    "total_mentions": 4,
+    "velocity": "+400.0%",
+    "status": "SURGING"
+  },
+  {
+    "entity": "\ud83e\udd17 Optimum Intel",
+    "current_window": 4,
+    "previous_window": 0,
+    "total_mentions": 4,
+    "velocity": "+400.0%",
+    "status": "SURGING"
+  },
+  {
+    "entity": "CNN",
+    "current_window": 3,
+    "previous_window": 1,
+    "total_mentions": 4,
+    "velocity": "+200.0%",
+    "status": "SURGING"
+  },
+  {
+    "entity": "IBM",
+    "current_window": 1,
+    "previous_window": 2,
+    "total_mentions": 3,
+    "velocity": "-50.0%",
+    "status": "DECLINING"
+  },
+  {
+    "entity": "Lyria 3",
+    "current_window": 0,
+    "previous_window": 3,
+    "total_mentions": 3,
+    "velocity": "-100.0%",
+    "status": "DECLINING"
+  },
+  {
+    "entity": "OpenAI\u2019s Economic Blueprint",
+    "current_window": 0,
+    "previous_window": 3,
+    "total_mentions": 3,
+    "velocity": "-100.0%",
+    "status": "DECLINING"
+  },
+  {
+    "entity": "NASA",
+    "current_window": 3,
+    "previous_window": 0,
+    "total_mentions": 3,
+    "velocity": "+300.0%",
+    "status": "SURGING"
+  }
+]

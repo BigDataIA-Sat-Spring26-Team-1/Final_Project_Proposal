@@ -1,0 +1,82 @@
+Source,URL,Status,Char_Count,Word_Count,Fetch_Time_Sec,Extract_Time_Sec,Total_Time_Sec
+TechCrunch,https://techcrunch.com/2026/04/01/cameo-partners-with-tiktok-to-boost-popularity/,Success,3071,471,0.1427757740020752,0.019997119903564453,0.16277289390563965
+TechCrunch,https://techcrunch.com/2026/04/01/whatsapp-notifies-hundreds-of-users-who-installed-a-fake-app-that-was-actually-government-spyware/,Success,2597,400,0.04470396041870117,0.024929046630859375,0.06963300704956055
+TechCrunch,https://techcrunch.com/2026/04/01/cognichip-wants-ai-to-design-the-chips-that-power-ai-and-just-raised-60m-to-try/,Success,4165,678,0.045014142990112305,0.022200822830200195,0.0672149658203125
+The Verge,https://www.theverge.com/tech/905398/apple-iphone-anniversary-jobs-release,Success,8620,1447,0.19682812690734863,0.04354596138000488,0.24037408828735352
+The Verge,https://www.theverge.com/tldr/904346/april-fools-day-2026-pranks-jokes-best-worst,Success,7241,1243,0.04776287078857422,0.053939104080200195,0.10170197486877441
+The Verge,https://www.theverge.com/transportation/905363/kia-ev3-north-america-launch,Success,2261,391,0.03136587142944336,0.029454946517944336,0.060820817947387695
+Biz & IT - Ars Technica,https://arstechnica.com/security/2026/03/new-quantum-computing-advances-heighten-threat-to-elliptic-curve-cryptosystems/,Success,2175,324,0.329150915145874,0.026960134506225586,0.3561110496520996
+Biz & IT - Ars Technica,https://arstechnica.com/security/2026/03/google-bumps-up-q-day-estimate-to-2029-far-sooner-than-previously-thought/,Success,1910,304,0.06029224395751953,0.0212399959564209,0.08153223991394043
+Biz & IT - Ars Technica,https://arstechnica.com/security/2026/03/self-propagating-malware-poisons-open-source-software-and-wipes-iran-based-machines/,Success,2371,357,0.06104421615600586,0.04145193099975586,0.10249614715576172
+WIRED,https://www.wired.com/story/nothing-watch-3-pro-deal-426/,Success,1952,351,0.3238511085510254,0.07716512680053711,0.4010162353515625
+WIRED,https://www.wired.com/story/the-new-era-of-militia-influencers/,Success,10514,1715,0.15480589866638184,0.03733682632446289,0.19214272499084473
+WIRED,https://www.wired.com/story/which-macbook-should-you-buy/,Success,35267,6367,0.18019461631774902,0.09065437316894531,0.27084898948669434
+VentureBeat,https://venturebeat.com/security/rsac-2026-agentic-soc-agent-telemetry-security-gap,Blocked/404,0,0,30.279811143875122,0.0,30.279811143875122
+VentureBeat,https://venturebeat.com/orchestration/the-end-of-shadow-ai-at-enterprises-kilo-launches-kiloclaw-for-organizations,Blocked/404,0,0,30.16130304336548,0.0,30.16130304336548
+VentureBeat,https://venturebeat.com/security/axios-npm-supply-chain-attack-rat-maintainer-token-2026,Blocked/404,0,0,0.052623748779296875,0.0,0.052623748779296875
+Crunch Hype,https://techncruncher.blogspot.com/2025/12/how-i-get-free-traffic-from-chatgpt-in.html,Success,54661,7833,0.2849740982055664,0.03530001640319824,0.32027411460876465
+Crunch Hype,https://techncruncher.blogspot.com/2025/01/top-10-ai-tools-that-will-transform.html,Success,9628,1366,0.10219502449035645,0.03120589256286621,0.13340091705322266
+Crunch Hype,https://techncruncher.blogspot.com/2023/12/limewire-ai-studio-review-2023-details.html,Success,9763,1528,0.11020994186401367,0.025101900100708008,0.13531184196472168
+MIT News - Artificial intelligence,https://news.mit.edu/2026/preview-tool-helps-makers-visualize-3d-printed-objects-0401,Success,6578,1054,0.16875600814819336,0.02558588981628418,0.19434189796447754
+MIT News - Artificial intelligence,https://news.mit.edu/2026/mit-researchers-use-ai-uncover-atomic-defects-materials-0330,Success,7086,1063,0.0623631477355957,0.02253103256225586,0.08489418029785156
+MIT News - Artificial intelligence,https://news.mit.edu/2026/seeing-sounds-mariano-salcedo-0326,Success,9199,1433,0.04930615425109863,0.024508953094482422,0.07381510734558105
+AI,https://blog.google/products-and-platforms/products/earth/satellite-imagery-brazilian-deforestation/,Success,1096,172,0.2621307373046875,0.026439905166625977,0.2885706424713135
+AI,https://blog.google/innovation-and-ai/technology/ai/google-ai-updates-march-2026/,Success,7548,1221,0.10119485855102539,0.0326230525970459,0.1338179111480713
+AI,https://blog.google/innovation-and-ai/technology/ai/veo-3-1-lite/,Success,1353,220,0.09796619415283203,0.02587294578552246,0.12383913993835449
+OpenAI News,https://openai.com/index/gradient-labs,Blocked/404,0,0,0.14376568794250488,0.0,0.14376568794250488
+OpenAI News,https://openai.com/index/accelerating-the-next-phase-ai,Blocked/404,0,0,0.10649800300598145,0.0,0.10649800300598145
+OpenAI News,https://openai.com/index/helping-disaster-response-teams-asia,Blocked/404,0,0,0.12603020668029785,0.0,0.12603020668029785
+Google DeepMind News,https://deepmind.google/blog/protecting-people-from-harmful-manipulation/,Success,6259,929,0.4042320251464844,0.025552034378051758,0.42978405952453613
+Google DeepMind News,https://deepmind.google/blog/lyria-3-pro-create-longer-tracks-in-more/,Success,4267,657,0.2849729061126709,0.03895998001098633,0.3239328861236572
+Google DeepMind News,https://deepmind.google/blog/measuring-progress-toward-agi-a-cognitive-framework/,Success,3397,493,0.2932109832763672,0.06926918029785156,0.36248016357421875
+Hugging Face - Blog,https://huggingface.co/blog/Hcompany/holo3,Success,4624,656,0.1556873321533203,0.016217947006225586,0.1719052791595459
+Hugging Face - Blog,https://huggingface.co/blog/tiiuae/falcon-perception,Success,19975,2915,0.1604170799255371,0.04439687728881836,0.20481395721435547
+Hugging Face - Blog,https://huggingface.co/blog/ibm-granite/granite-4-vision,Success,8114,1134,0.07749772071838379,0.032289981842041016,0.1097877025604248
+Lil'Log,https://lilianweng.github.io/posts/2025-05-01-thinking/,Success,22100,3461,0.13143229484558105,0.15996384620666504,0.2913961410522461
+Lil'Log,https://lilianweng.github.io/posts/2024-11-28-reward-hacking/,Success,44224,6919,0.10410022735595703,0.04401993751525879,0.14812016487121582
+Lil'Log,https://lilianweng.github.io/posts/2024-07-07-hallucination/,Success,37118,5559,0.06615424156188965,0.03244519233703613,0.09859943389892578
+MIT Technology Review,https://www.technologyreview.com/2026/04/01/1134993/the-download-gig-workers-training-humanoids-better-ai-benchmarks/,Success,6646,1084,0.17319297790527344,0.031517982482910156,0.2047109603881836
+MIT Technology Review,https://www.technologyreview.com/2026/04/01/1134863/humanoid-data-training-gig-economy-2026-breakthrough-technology/,Success,10273,1706,0.04447054862976074,0.029716968536376953,0.0741875171661377
+MIT Technology Review,https://www.technologyreview.com/2026/03/31/1134762/shifting-to-ai-model-customization-is-an-architectural-imperative/,Success,7890,1137,0.0399019718170166,0.03230404853820801,0.07220602035522461
+IEEE Spectrum,https://spectrum.ieee.org/exoskeleton-user-experience,Success,29619,5062,0.2536160945892334,0.03759193420410156,0.29120802879333496
+IEEE Spectrum,https://spectrum.ieee.org/deep-sea-submersible,Success,9063,1446,0.04976081848144531,0.032253265380859375,0.08201408386230469
+IEEE Spectrum,https://spectrum.ieee.org/invences-startup-telecom-networks,Success,7624,1123,0.04711318016052246,0.033724069595336914,0.08083724975585938
+Simon Willison's Weblog,https://simonwillison.net/2026/Apr/1/datasette-extract/#atom-everything,Success,472,81,0.11075615882873535,0.003638029098510742,0.1143941879272461
+Simon Willison's Weblog,https://simonwillison.net/2026/Apr/1/datasette-enrichments-llm/#atom-everything,Success,476,82,0.040895938873291016,0.00691676139831543,0.047812700271606445
+Simon Willison's Weblog,https://simonwillison.net/2026/Apr/1/datasette-llm-usage/#atom-everything,Success,767,114,0.16909217834472656,0.008875846862792969,0.17796802520751953
+cs.AI updates on arXiv.org,https://arxiv.org/abs/2603.28902,Success,2712,361,0.17630791664123535,0.0242002010345459,0.20050811767578125
+cs.AI updates on arXiv.org,https://arxiv.org/abs/2603.28906,Success,3288,478,0.03152894973754883,0.02610611915588379,0.05763506889343262
+cs.AI updates on arXiv.org,https://arxiv.org/abs/2603.28928,Success,2973,399,0.03144025802612305,0.020954132080078125,0.05239439010620117
+cs.LG updates on arXiv.org,https://arxiv.org/abs/2603.28916,Success,3434,460,0.02842998504638672,0.028750896453857422,0.05718088150024414
+cs.LG updates on arXiv.org,https://arxiv.org/abs/2603.28937,Success,3175,428,0.2133800983428955,0.03204989433288574,0.24542999267578125
+cs.LG updates on arXiv.org,https://arxiv.org/abs/2603.28939,Success,2741,381,0.02687382698059082,0.02943110466003418,0.056304931640625
+Hacker News,https://blog.cloudflare.com/emdash-wordpress/,Success,17146,2805,0.3099551200866699,0.028721094131469727,0.33867621421813965
+Hacker News,https://engineering.fb.com/2026/03/30/data-center-engineering/ai-for-american-produced-cement-and-concrete/,Success,9616,1411,0.16923213005065918,0.026957988739013672,0.19619011878967285
+Hacker News,https://news.ycombinator.com/item?id=47601859,Success,901,126,0.7710027694702148,0.15125799179077148,0.9222607612609863
+BBC News,https://www.bbc.com/news/articles/cx24e1nryn9o?at_medium=RSS&at_campaign=rss,Success,1870,309,0.220200777053833,0.022747278213500977,0.24294805526733398
+BBC News,https://www.bbc.com/news/articles/ce8l2q5yq51o?at_medium=RSS&at_campaign=rss,Success,2431,405,0.042188167572021484,0.03094792366027832,0.0731360912322998
+BBC News,https://www.bbc.com/news/articles/cvge91r9j80o?at_medium=RSS&at_campaign=rss,Success,1972,320,0.05358099937438965,0.028706073760986328,0.08228707313537598
+AI News & Artificial Intelligence | TechCrunch,https://techcrunch.com/2026/03/31/alexa-plus-new-food-ordering-experiences-with-uber-eats-and-grubhub/,Success,2240,359,0.14861106872558594,0.013275146484375,0.16188621520996094
+AI News & Artificial Intelligence | TechCrunch,https://techcrunch.com/2026/03/31/nomadic-raises-8-4-million-to-wrangle-the-data-pouring-off-avs/,Success,5068,799,0.037316083908081055,0.018459081649780273,0.05577516555786133
+AI News & Artificial Intelligence | TechCrunch,https://techcrunch.com/2026/03/31/exclusive-runway-launches-10m-fund-builders-program-to-support-early-stage-ai-startups/,Success,6430,1008,0.03755688667297363,0.03006577491760254,0.06762266159057617
+Artificial Intelligence,https://aws.amazon.com/blogs/machine-learning/build-reliable-ai-agents-with-amazon-bedrock-agentcore-evaluations/,Success,33549,4758,0.2534809112548828,0.04462695121765137,0.2981078624725342
+Artificial Intelligence,https://aws.amazon.com/blogs/machine-learning/build-a-finops-agent-using-amazon-bedrock-agentcore/,Success,13664,2039,0.10367417335510254,0.03797197341918945,0.141646146774292
+Artificial Intelligence,https://aws.amazon.com/blogs/machine-learning/building-an-ai-powered-system-for-compliance-evidence-collection/,Success,17500,2469,0.08949780464172363,0.030668973922729492,0.12016677856445312
+HackerNoon - ai,https://hackernoon.com/the-app-that-lets-ai-agents-hire-you-human-api-goes-mobile-with-a-$65mn-long-on-human-data?source=rss,Success,360,61,0.15890789031982422,0.05127906799316406,0.21018695831298828
+HackerNoon - ai,https://hackernoon.com/how-coinfellos-minchi-park-built-the-trust-layer-500-million-crypto-users-have-been-waiting-for?source=rss,Success,365,58,0.05037498474121094,0.05325913429260254,0.10363411903381348
+HackerNoon - ai,https://hackernoon.com/interactive-data-chart-generator-pure-javascript-canvas-tool?source=rss,Success,651,92,0.04751396179199219,0.07520914077758789,0.12272310256958008
+Bloomberg Technology,https://www.bloomberg.com/news/videos/2026-04-01/us-needs-to-invest-more-in-ai-buildout-cato-s-frazier-video,Blocked/404,0,0,0.18050789833068848,0.0,0.18050789833068848
+Bloomberg Technology,https://www.bloomberg.com/news/videos/2026-04-01/nasa-artemis-ii-is-part-of-the-latest-space-race-video,Blocked/404,0,0,0.13032817840576172,0.0,0.13032817840576172
+Bloomberg Technology,https://www.bloomberg.com/news/articles/2026-04-01/mit-seeks-to-unleash-faculty-and-student-startups-amid-ai-boom,Blocked/404,0,0,0.23113489151000977,0.0,0.23113489151000977
+NYT > Technology,https://www.nytimes.com/2026/04/01/technology/apple-employee-50-years.html,Blocked/404,0,0,0.17645716667175293,0.0,0.17645716667175293
+NYT > Technology,https://www.nytimes.com/2026/03/31/arts/instagram-pg-13-rating-mpa-meta-teen-safety.html,Blocked/404,0,0,0.1259758472442627,0.0,0.1259758472442627
+NYT > Technology,https://www.nytimes.com/2026/03/31/technology/openai-12-billion-latest-funding-round.html,Blocked/404,0,0,0.1275007724761963,0.0,0.1275007724761963
+Google AI Blog,http://blog.research.google/2024/03/generative-ai-to-quantify-uncertainty.html,Success,11398,1679,0.44312000274658203,0.043952226638793945,0.487072229385376
+Google AI Blog,http://blog.research.google/2024/03/autobnn-probabilistic-time-series.html,Success,9788,1415,0.17886900901794434,0.04529905319213867,0.224168062210083
+Google AI Blog,http://blog.research.google/2024/03/computer-aided-diagnosis-for-lung.html,Success,8489,1243,0.3255629539489746,0.05172991752624512,0.3772928714752197
+NVIDIA Technical Blog,https://developer.nvidia.com/blog/cuda-tile-programming-now-available-for-basic/,Success,8203,1346,0.2181868553161621,0.01862502098083496,0.23681187629699707
+NVIDIA Technical Blog,https://developer.nvidia.com/blog/nvidia-extreme-co-design-delivers-new-mlperf-inference-records/,Success,13140,1871,2.4861371517181396,0.03179502487182617,2.517932176589966
+NVIDIA Technical Blog,https://developer.nvidia.com/blog/accelerate-token-production-in-ai-factories-using-unified-services-and-real-time-ai/,Success,9051,1250,2.637017250061035,0.02119898796081543,2.6582162380218506
+Microsoft Research,https://www.microsoft.com/en-us/research/blog/adele-predicting-and-explaining-ai-performance-across-tasks/,Success,6868,1041,0.8521010875701904,0.02829909324645996,0.8804001808166504
+Microsoft Research,https://www.microsoft.com/en-us/research/blog/asgardbench-a-benchmark-for-visually-grounded-interactive-planning/,Success,6774,1070,0.748316764831543,0.02985072135925293,0.7781674861907959
+Microsoft Research,https://www.microsoft.com/en-us/research/blog/groundedplanbench-spatially-grounded-long-horizon-task-planning-for-robot-manipulation/,Success,7565,1123,0.6996772289276123,0.03285408020019531,0.7325313091278076
