@@ -1,0 +1,120 @@
+{
+  "timestamp": "2026-04-10T20:15:00Z",
+  "global_stats": {
+    "articles_scanned": 2880,
+    "entities_identified": 45,
+    "high_signal_trends": 25
+  },
+  "surging_trends": [
+    {
+      "entity": "RAG",
+      "velocity_v": 1400.0,
+      "total": 14,
+      "label": "BREAKING"
+    },
+    {
+      "entity": "Amazon Bedrock",
+      "velocity_v": 1100.0,
+      "total": 13,
+      "label": "SURGING"
+    },
+    {
+      "entity": "CPU",
+      "velocity_v": 1000.0,
+      "total": 12,
+      "label": "SURGING"
+    },
+    {
+      "entity": "Amazon SageMaker",
+      "velocity_v": 800.0,
+      "total": 8,
+      "label": "BREAKING"
+    },
+    {
+      "entity": "Hugging Face Transformers",
+      "velocity_v": 700.0,
+      "total": 7,
+      "label": "BREAKING"
+    },
+    {
+      "entity": "Society Newsletter",
+      "velocity_v": 600.0,
+      "total": 6,
+      "label": "BREAKING"
+    },
+    {
+      "entity": "Llama 2",
+      "velocity_v": 600.0,
+      "total": 6,
+      "label": "BREAKING"
+    },
+    {
+      "entity": "TensorFlow",
+      "velocity_v": 600.0,
+      "total": 6,
+      "label": "BREAKING"
+    },
+    {
+      "entity": "Hugging Face Inference Endpoints",
+      "velocity_v": 500.0,
+      "total": 5,
+      "label": "BREAKING"
+    },
+    {
+      "entity": "Hugging Face Spaces",
+      "velocity_v": 500.0,
+      "total": 5,
+      "label": "BREAKING"
+    },
+    {
+      "entity": "NVIDIA",
+      "velocity_v": 481.8,
+      "total": 75,
+      "label": "SURGING"
+    },
+    {
+      "entity": "AWS",
+      "velocity_v": 400.0,
+      "total": 12,
+      "label": "SURGING"
+    },
+    {
+      "entity": "DeepSpeed",
+      "velocity_v": 400.0,
+      "total": 4,
+      "label": "BREAKING"
+    },
+    {
+      "entity": "\ud83e\udd17 Optimum Intel",
+      "velocity_v": 400.0,
+      "total": 4,
+      "label": "BREAKING"
+    },
+    {
+      "entity": "ML",
+      "velocity_v": 320.0,
+      "total": 26,
+      "label": "SURGING"
+    }
+  ],
+  "business_opportunities": [
+    {
+      "company": "VectorScale (AI Infrastructure Startup)",
+      "opportunity": "Top 10 AI Content Generator & Writer Tools in 2022",
+      "score": 85.7,
+      "status": "\ud83d\udc8e HIDDEN GEM (Highest ROI Opportunity)"
+    },
+    {
+      "company": "ShieldAI (Cybersecurity Company)",
+      "opportunity": "Building an early warning system for LLM-aided biological th",
+      "score": 94.0,
+      "status": "\ud83d\udc8e HIDDEN GEM (Highest ROI Opportunity)"
+    },
+    {
+      "company": "PayFlow (Fintech Startup)",
+      "opportunity": "Put AI to work: Automate and scale financial operations",
+      "score": 94.0,
+      "status": "\ud83d\udc8e HIDDEN GEM (Highest ROI Opportunity)"
+    }
+  ]
+}
