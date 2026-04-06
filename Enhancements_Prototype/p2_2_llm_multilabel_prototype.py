@@ -3,7 +3,7 @@ P2_2: Multi-Label Classification via LLM (Dynamic Labels)
 ==========================================================
 Uses GPT-4o-mini to assign 2-3 topic labels per article.
 Labels are NOT from a fixed taxonomy — the LLM decides freely.
-Runs on the deduplicated corpus (~699 articles).
+Runs on the deduplicated corpus (~699 articles) asynchronously with rate limiting.
 Logs detailed cost, token, and latency metrics.
 """
 import json
@@ -12,11 +12,11 @@ import time
 import asyncio
 from datetime import datetime
 from typing import List, Dict
-from openai import OpenAI
+from openai import AsyncOpenAI
 from dotenv import load_dotenv
 
 load_dotenv()
-client = OpenAI()
+aclient = AsyncOpenAI()
 
 # Pricing: GPT-4o-mini (as of 2026)
 INPUT_COST_PER_1M = 0.15   # $/1M input tokens
@@ -38,37 +38,38 @@ def get_article_text(article: dict) -> str:
         return f"Title: {title}\nSummary: {summary[:300]}"
     return f"Title: {title}"
 
+async def aclassify_single(article_text: str, sem: asyncio.Semaphore) -> tuple:
+    """Classify one article asynchronously with a semaphore for rate limiting."""
+    async with sem:
+        start = time.time()
+        try:
+            response = await aclient.chat.completions.create(
+                model="gpt-4o-mini",
+                messages=[
+                    {"role": "system", "content": SYSTEM_PROMPT},
+                    {"role": "user", "content": article_text}
+                ],
+                response_format={"type": "json_object"},
+                max_tokens=150
+            )
+            latency = time.time() - start
+            usage = {
+                "prompt_tokens": response.usage.prompt_tokens,
+                "completion_tokens": response.usage.completion_tokens,
+                "total_tokens": response.usage.total_tokens
+            }
+            
+            try:
+                data = json.loads(response.choices[0].message.content)
+                labels = {item["label"]: item["weight"] for item in data.get("labels", [])}
+            except (json.JSONDecodeError, KeyError, TypeError):
+                labels = {"Uncategorized": 1.0}
+            
+            return labels, usage, latency
+        except Exception as e:
+            return {"Error": 1.0}, {"prompt_tokens": 0, "completion_tokens": 0, "total_tokens": 0}, 0.0
 
-def classify_single(article_text: str) -> tuple:
-    """Classify one article. Returns (labels_dict, usage_dict, latency)."""
-    start = time.time()
-    response = client.chat.completions.create(
-        model="gpt-4o-mini",
-        messages=[
-            {"role": "system", "content": SYSTEM_PROMPT},
-            {"role": "user", "content": article_text}
-        ],
-        response_format={"type": "json_object"},
-        max_tokens=150
-    )
-    latency = time.time() - start
-
-    usage = {
-        "prompt_tokens": response.usage.prompt_tokens,
-        "completion_tokens": response.usage.completion_tokens,
-        "total_tokens": response.usage.total_tokens
-    }
-
-    try:
-        data = json.loads(response.choices[0].message.content)
-        labels = {item["label"]: item["weight"] for item in data.get("labels", [])}
-    except (json.JSONDecodeError, KeyError, TypeError):
-        labels = {"Uncategorized": 1.0}
-
-    return labels, usage, latency
-
-
-def main():
+async def amain():
     # Load deduplicated corpus
     corpus_path = os.path.join(
         os.path.dirname(os.path.dirname(os.path.abspath(__file__))),
@@ -77,10 +78,10 @@ def main():
     with open(corpus_path, "r", encoding="utf-8") as f:
         articles = json.load(f)
 
-    print(f"P2_2: LLM Multi-Label Classification (Dynamic Labels)")
+    print(f"P2_2: LLM Multi-Label Classification ASYNC (Dynamic Labels)")
     print(f"  Corpus: {len(articles)} deduplicated articles")
     print(f"  Model: gpt-4o-mini")
-    print(f"  Labels: Dynamic (LLM-chosen, no fixed taxonomy)")
+    print(f"  Concurrency limit: 20 parallel requests")
     print("=" * 60)
 
     # Track metrics
@@ -92,19 +93,26 @@ def main():
     errors = 0
 
     start_time = time.time()
-
-    for i, article in enumerate(articles):
+    
+    # Process asynchronously with a semaphore to cap at 20 concurrent requests
+    sem = asyncio.Semaphore(20)
+    tasks = []
+    
+    for article in articles:
         text = get_article_text(article)
-
-        try:
-            labels, usage, latency = classify_single(text)
-        except Exception as e:
-            print(f"  [{i+1:3d}] ERROR: {e}")
-            labels = {"Error": 1.0}
-            usage = {"prompt_tokens": 0, "completion_tokens": 0, "total_tokens": 0}
-            latency = 0.0
+        tasks.append(aclassify_single(text, sem))
+        
+    print(f"Submitting {len(tasks)} async classification tasks...")
+    
+    # Execute batch
+    batch_results = await asyncio.gather(*tasks)
+    
+    for i, (labels, usage, latency) in enumerate(batch_results):
+        article = articles[i]
+        if "Error" in labels:
             errors += 1
-
+            print(f"  [{i+1:3d}] ERROR classification failed for: {article.get('title', '')[:45]}")
+            
         total_input_tokens += usage["prompt_tokens"]
         total_output_tokens += usage["completion_tokens"]
         total_latency += latency
@@ -120,15 +128,6 @@ def main():
             "tokens": usage,
             "latency_s": round(latency, 3)
         })
-
-        # Progress log every 50 articles
-        if (i + 1) % 50 == 0 or i == 0:
-            elapsed = time.time() - start_time
-            rate = (i + 1) / elapsed if elapsed > 0 else 0
-            est_remaining = (len(articles) - i - 1) / rate if rate > 0 else 0
-            labels_str = " | ".join([f"{k}({v:.2f})" for k, v in labels.items()])
-            print(f"  [{i+1:3d}/{len(articles)}] {rate:.1f} art/s | ETA: {est_remaining:.0f}s | {article['title'][:45]}...")
-            print(f"           → {labels_str}")
 
     total_time = time.time() - start_time
 
@@ -162,7 +161,7 @@ def main():
         "unique_labels_discovered": len(all_labels_seen),
         "top_20_labels": dict(sorted(all_labels_seen.items(), key=lambda x: -x[1])[:20]),
         "errors": errors,
-        "multi_label_rate": round(sum(1 for r in results if len(r["labels"]) >= 2) / len(results) * 100, 1)
+        "multi_label_rate": round(sum(1 for r in results if len(r["labels"]) >= 2) / len(results) * 100, 1) if len(results) > 0 else 0.0
     }
 
     metrics_path = os.path.join(script_dir, "Data", "p2_2_metrics.json")
@@ -171,12 +170,11 @@ def main():
 
     # Print final report
     print("\n" + "=" * 60)
-    print("P2_2 LLM CLASSIFICATION — FINAL REPORT")
+    print("P2_2 LLM CLASSIFICATION ASYNC — FINAL REPORT")
     print("=" * 60)
     print(f"  Articles classified:     {len(articles)}")
     print(f"  Errors:                  {errors}")
-    print(f"  Total time:              {total_time:.1f}s ({total_time/60:.1f} min)")
-    print(f"  Avg latency/article:     {total_latency/len(articles):.3f}s")
+    print(f"  Total wall time:         {total_time:.1f}s ({total_time/60:.1f} min)")
     print(f"  Throughput:              {len(articles)/total_time:.1f} articles/s")
     print(f"  ---")
     print(f"  Input tokens:            {total_input_tokens:,}")
@@ -200,6 +198,8 @@ def main():
     print(f"  Results: {output_path}")
     print(f"  Metrics: {metrics_path}")
 
+def main():
+    asyncio.run(amain())
 
 if __name__ == "__main__":
     main()
