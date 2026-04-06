@@ -1,0 +1,282 @@
+[
+  {
+    "title": "Cameo partners with TikTok to boost popularity",
+    "source": "TechCrunch",
+    "method": "embedding",
+    "classifications": {
+      "Computer Vision": 0.42,
+      "Software Engineering": 0.3,
+      "Data Engineering": 0.27
+    }
+  },
+  {
+    "title": "WhatsApp notifies hundreds of users who installed a fake app made by government spyware maker",
+    "source": "TechCrunch",
+    "method": "embedding",
+    "classifications": {
+      "Security": 0.59,
+      "AI Policy": 0.24,
+      "LLMs": 0.17
+    }
+  },
+  {
+    "title": "Cognichip wants AI to design the chips that power AI, and just raised $60M to try",
+    "source": "TechCrunch",
+    "method": "keyword",
+    "classifications": {
+      "Hardware": 1.0
+    }
+  },
+  {
+    "title": "SpaceX files confidentially for IPO in mega listing potentially valued at $1.75 trillion, report says",
+    "source": "TechCrunch",
+    "method": "keyword",
+    "classifications": {
+      "Startups": 1.0
+    }
+  },
+  {
+    "title": "Hasbro says it was hacked, and may take ‘several weeks’ to recover",
+    "source": "TechCrunch",
+    "method": "keyword",
+    "classifications": {
+      "Security": 1.0
+    }
+  },
+  {
+    "title": "Less than a month: StrictlyVC San Francisco brings leaders from TDK Ventures, Replit, and more together",
+    "source": "TechCrunch",
+    "method": "embedding",
+    "classifications": {
+      "Software Engineering": 0.39,
+      "Startups": 0.35,
+      "Hardware": 0.26
+    }
+  },
+  {
+    "title": "Lucid Motors recalls over 4,000 Gravity SUVs citing improperly welded seat belts",
+    "source": "TechCrunch",
+    "method": "embedding",
+    "classifications": {
+      "AI Agents": 0.4,
+      "General AI": 0.32,
+      "Hardware": 0.28
+    }
+  },
+  {
+    "title": "Nothing’s AI devices plan reportedly contains smart glasses and earbuds",
+    "source": "TechCrunch",
+    "method": "embedding",
+    "classifications": {
+      "AI Policy": 0.35,
+      "AI Agents": 0.33,
+      "Computer Vision": 0.32
+    }
+  },
+  {
+    "title": "Mercor says it was hit by cyberattack tied to compromise of open source LiteLLM project",
+    "source": "TechCrunch",
+    "method": "keyword",
+    "classifications": {
+      "LLMs": 0.25,
+      "Security": 0.25,
+      "Software Engineering": 0.25
+    }
+  },
+  {
+    "title": "Toyota’s Woven Capital appoints new CIO and COO in push for finding the ‘future of mobility’",
+    "source": "TechCrunch",
+    "method": "keyword",
+    "classifications": {
+      "Security": 0.5,
+      "Software Engineering": 0.5
+    }
+  },
+  {
+    "title": "Anthropic is having a month",
+    "source": "TechCrunch",
+    "method": "keyword",
+    "classifications": {
+      "LLMs": 1.0
+    }
+  },
+  {
+    "title": "Salesforce announces an AI-heavy makeover for Slack, with 30 new features",
+    "source": "TechCrunch",
+    "method": "embedding",
+    "classifications": {
+      "AI Agents": 0.35,
+      "Software Engineering": 0.34,
+      "AI Policy": 0.31
+    }
+  },
+  {
+    "title": "Robotaxi companies refuse to say how often their AVs need remote help",
+    "source": "TechCrunch",
+    "method": "embedding",
+    "classifications": {
+      "AI Agents": 0.39,
+      "AI Policy": 0.36,
+      "Security": 0.25
+    }
+  },
+  {
+    "title": "OpenAI, not yet public, raises $3B from retail investors in monster $122B fund raise",
+    "source": "TechCrunch",
+    "method": "keyword",
+    "classifications": {
+      "Startups": 0.5,
+      "LLMs": 0.25,
+      "Hardware": 0.25
+    }
+  },
+  {
+    "title": "It’s not your imagination: AI seed startups are commanding higher valuations",
+    "source": "TechCrunch",
+    "method": "keyword",
+    "classifications": {
+      "Startups": 1.0
+    }
+  },
+  {
+    "title": "Yupp shuts down after raising $33M from a16z crypto’s Chris Dixon",
+    "source": "TechCrunch",
+    "method": "keyword",
+    "classifications": {
+      "Startups": 1.0
+    }
+  },
+  {
+    "title": "Meta was finally held accountable for harming teens. Now what?",
+    "source": "TechCrunch",
+    "method": "keyword",
+    "classifications": {
+      "AI Policy": 0.5,
+      "Security": 0.5
+    }
+  },
+  {
+    "title": "Go play this secret game in your TikTok DMs",
+    "source": "TechCrunch",
+    "method": "embedding",
+    "classifications": {
+      "AI Agents": 0.43,
+      "Software Engineering": 0.31,
+      "Security": 0.26
+    }
+  },
+  {
+    "title": "Caller ID app Truecaller hits 500 million monthly users",
+    "source": "TechCrunch",
+    "method": "embedding",
+    "classifications": {
+      "General AI": 0.39,
+      "Security": 0.37,
+      "LLMs": 0.25
+    }
+  },
+  {
+    "title": "Social gaming platform Rec Room, once valued at $3.5B, is shutting down",
+    "source": "TechCrunch",
+    "method": "embedding",
+    "classifications": {
+      "Startups": 0.39,
+      "Security": 0.38,
+      "LLMs": 0.23
+    }
+  },
+  {
+    "title": "Everything is iPhone now",
+    "source": "The Verge",
+    "method": "embedding",
+    "classifications": {
+      "Hardware": 0.37,
+      "General AI": 0.33,
+      "Startups": 0.29
+    }
+  },
+  {
+    "title": "April Fools’ Day 2026: the best and cringiest pranks",
+    "source": "The Verge",
+    "method": "embedding",
+    "classifications": {
+      "Security": 0.39,
+      "General AI": 0.32,
+      "AI Policy": 0.29
+    }
+  },
+  {
+    "title": "Kia&#8217;s compact EV3 is coming to the US this year, with 320 miles of range",
+    "source": "The Verge",
+    "method": "embedding",
+    "classifications": {
+      "AI Policy": 0.37,
+      "Computer Vision": 0.36,
+      "AI Agents": 0.27
+    }
+  },
+  {
+    "title": "The Shokz OpenRun Pro 2 are now at their lowest price in months",
+    "source": "The Verge",
+    "method": "embedding",
+    "classifications": {
+      "Software Engineering": 0.42,
+      "Startups": 0.34,
+      "Data Engineering": 0.23
+    }
+  },
+  {
+    "title": "I tested a living room full of cheap Ikea speakers against Sonos and Bose",
+    "source": "The Verge",
+    "method": "embedding",
+    "classifications": {
+      "Hardware": 0.43,
+      "Startups": 0.29,
+      "Software Engineering": 0.28
+    }
+  },
+  {
+    "title": "Snapchat&#8217;s &#8216;Reals&#8217; joke mocks Instagram&#8217;s many ripoffs",
+    "source": "The Verge",
+    "method": "keyword",
+    "classifications": {
+      "Startups": 1.0
+    }
+  },
+  {
+    "title": "The Trump administration&#8217;s antitrust honeymoon is over",
+    "source": "The Verge",
+    "method": "keyword",
+    "classifications": {
+      "Software Engineering": 1.0
+    }
+  },
+  {
+    "title": "SpaceX reportedly files for IPO but it’s keeping the numbers secret (for now)",
+    "source": "The Verge",
+    "method": "keyword",
+    "classifications": {
+      "Startups": 1.0
+    }
+  },
+  {
+    "title": "These Raspberry Pi price hikes are no joke",
+    "source": "The Verge",
+    "method": "embedding",
+    "classifications": {
+      "Hardware": 0.48,
+      "Startups": 0.32,
+      "Data Engineering": 0.2
+    }
+  },
+  {
+    "title": "Amazon&#8217;s Big Spring Sale 2026: all of the latest deals",
+    "source": "The Verge",
+    "method": "embedding",
+    "classifications": {
+      "Startups": 0.4,
+      "Hardware": 0.31,
+      "General AI": 0.29
+    }
+  }
+]

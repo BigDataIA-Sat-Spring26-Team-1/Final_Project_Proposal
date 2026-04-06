@@ -1,20 +1,16 @@
 {
   "name": "Aakash Belide",
   "job_title": "Data Science Intern",
-  "seniority": "Entry-level",
+  "seniority": "mid",
   "primary_interests": [
     "AI Agents",
-    "Data Engineering",
-    "Machine Learning",
-    "MLOps",
-    "AI Policy"
+    "Data Engineering"
   ],
   "technical_skills": [
-    "Data Science",
     "PySpark",
     "SQL",
     "Databricks",
-    "Data Visualization",
+    "Machine Learning",
     "Python",
     "NLP",
     "Computer Vision",
@@ -25,19 +21,20 @@
     "Azure",
     "GCP",
     "AWS",
-    "Git"
+    "Git",
+    "React"
   ],
-  "bio_summary": "Passionately bridging technology with data insights! A Data Science Intern with almost two years of experience as a Data Science Engineer, specializing in unlocking business potential through data analysis techniques and focused on building AI Agents and Workflows to automate tasks and solve real-world problems.",
+  "bio_summary": "Data Science Engineer with almost 2 years of experience, specializing in AI Agents and workflows. Passionate about leveraging data insights to drive business growth and streamline operations.",
   "category_weights": {
     "LLMs": 0.8,
-    "AI Agents": 0.9,
+    "AI Agents": 1.0,
     "Computer Vision": 0.7,
-    "Security": 0.05,
+    "Security": 0.6,
     "Hardware": 0.0,
-    "Software Engineering": 0.6,
-    "AI Policy": 0.2,
-    "General AI": 0.5,
-    "Data Engineering": 0.9,
-    "Startups": 0.1
+    "Software Engineering": 0.9,
+    "AI Policy": 0.0,
+    "General AI": 0.8,
+    "Data Engineering": 1.0,
+    "Startups": 0.5
   }
 }
