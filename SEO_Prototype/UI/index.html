@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CurateAI | Intelligence Dashboard</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- Sidebar -->
+  <aside>
+    <div class="logo">
+      <div style="width: 28px; height: 28px; background: white; border-radius: 6px; display: flex; align-items: center; justify-content: center; font-size: 14px; font-weight: 900; color: #1e293b;">C</div>
+      CurateAI
+    </div>
+    
+    <nav>
+      <ul>
+        <li class="active" onclick="switchTab('trending')">
+          <span>📈</span> Market Sentiment
+        </li>
+        <li onclick="switchTab('seo-brief')">
+          <span>📝</span> SEO Strategy
+        </li>
+        <li onclick="switchTab('newsletter')">
+          <span>📮</span> Newsletter Preview
+        </li>
+        <li style="margin-top: 15rem; opacity: 0.5;">
+          <span>⚙️</span> Settings
+        </li>
+      </ul>
+    </nav>
+  </aside>
+
+  <!-- Main Content -->
+  <main>
+    
+    <!-- SECTION: TRENDING KEYWORDS -->
+    <section id="trending" class="dashboard-section active">
+      <header>
+        <h1>Market Sentiment</h1>
+        <p class="subtitle">Trending topics analyzed from 50+ real-time tech feeds.</p>
+      </header>
+
+      <div class="grid grid-2" style="margin-bottom: 2rem;">
+        <div class="card">
+          <p class="text-dim" style="font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.5rem;">Total Volume</p>
+          <h2 style="font-size: 1.75rem;">124.5k</h2>
+          <p class="trend-up" style="font-size: 0.85rem; font-weight: 600;">+24% vs last week</p>
+        </div>
+        <div class="card">
+          <p class="text-dim" style="font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.5rem;">Top Sentiment</p>
+          <h2 style="font-size: 1.75rem;">Positive</h2>
+          <p style="font-size: 0.85rem; color: #94a3b8;">Driven by Agentic AI</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3 style="margin-bottom: 1.5rem;">Emerging Topics</h3>
+        <div class="keyword-row" style="background: rgba(255,255,255,0.02); border-radius: 8px; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--text-dim); margin-bottom: 0.5rem; border: none;">
+          <div style="flex: 2;">Entity / Signal</div>
+          <div style="flex: 1;">Status</div>
+          <div style="flex: 1; text-align: center;">Prev Window</div>
+          <div style="flex: 1; text-align: center;">Current</div>
+          <div style="flex: 1; text-align: right;">Velocity</div>
+        </div>
+
+        <div class="keyword-row">
+          <div style="flex: 2;">
+            <div style="font-weight: 600; margin-bottom: 0.25rem;">Hugging Face / LLM Hub</div>
+            <div class="text-dim" style="font-size: 0.8rem;">Open Source Infrastructure</div>
+          </div>
+          <div style="flex: 1;">
+            <span class="keyword-badge" style="background: rgba(16, 185, 129, 0.1); color: #10b981;">Surging</span>
+          </div>
+          <div style="flex: 1; text-align: center; color: var(--text-dim);">34</div>
+          <div style="flex: 1; text-align: center; font-weight: 700;">117</div>
+          <div style="flex: 1; text-align: right; font-weight: 700; color: #10b981;">+244.1% ↑</div>
+        </div>
+
+        <div class="keyword-row">
+          <div style="flex: 2;">
+            <div style="font-weight: 600; margin-bottom: 0.25rem;">NVIDIA / H100 Supply</div>
+            <div class="text-dim" style="font-size: 0.8rem;">Compute & Hardware</div>
+          </div>
+          <div style="flex: 1;">
+            <span class="keyword-badge" style="background: rgba(16, 185, 129, 0.1); color: #10b981;">Surging</span>
+          </div>
+          <div style="flex: 1; text-align: center; color: var(--text-dim);">11</div>
+          <div style="flex: 1; text-align: center; font-weight: 700;">64</div>
+          <div style="flex: 1; text-align: right; font-weight: 700; color: #10b981;">+481.8% ↑</div>
+        </div>
+
+        <div class="keyword-row">
+          <div style="flex: 2;">
+            <div style="font-weight: 600; margin-bottom: 0.25rem;">Amazon Bedrock / SageMaker</div>
+            <div class="text-dim" style="font-size: 0.8rem;">Enterprise Orchestration</div>
+          </div>
+          <div style="flex: 1;">
+            <span class="keyword-badge" style="background: rgba(16, 185, 129, 0.1); color: #10b981;">Breakout</span>
+          </div>
+          <div style="flex: 1; text-align: center; color: var(--text-dim);">1</div>
+          <div style="flex: 1; text-align: center; font-weight: 700;">12</div>
+          <div style="flex: 1; text-align: right; font-weight: 700; color: #10b981;">+1100.0% ↑</div>
+        </div>
+        
+        <div class="keyword-row">
+          <div style="flex: 2;">
+            <div style="font-weight: 600; margin-bottom: 0.25rem;">LLM / RAG Architecture</div>
+            <div class="text-dim" style="font-size: 0.8rem;">Application Frameworks</div>
+          </div>
+          <div style="flex: 1;">
+            <span class="keyword-badge" style="background: rgba(16, 185, 129, 0.1); color: #10b981;">Surging</span>
+          </div>
+          <div style="flex: 1; text-align: center; color: var(--text-dim);">40</div>
+          <div style="flex: 1; text-align: center; font-weight: 700;">107</div>
+          <div style="flex: 1; text-align: right; font-weight: 700; color: #10b981;">+167.5% ↑</div>
+        </div>
+
+        <div class="keyword-row">
+          <div style="flex: 2;">
+            <div style="font-weight: 600; margin-bottom: 0.25rem;">Intel / Optimum Intel</div>
+            <div class="text-dim" style="font-size: 0.8rem;">Edge Optimization</div>
+          </div>
+          <div style="flex: 1;">
+            <span class="keyword-badge" style="background: rgba(16, 185, 129, 0.1); color: #10b981;">Surging</span>
+          </div>
+          <div style="flex: 1; text-align: center; color: var(--text-dim);">11</div>
+          <div style="flex: 1; text-align: center; font-weight: 700;">31</div>
+          <div style="flex: 1; text-align: right; font-weight: 700; color: #10b981;">+181.8% ↑</div>
+        </div>
+
+        <div class="keyword-row">
+          <div style="flex: 2;">
+            <div style="font-weight: 600; margin-bottom: 0.25rem;">OpenAI / GPT-4o API</div>
+            <div class="text-dim" style="font-size: 0.8rem;">Proprietary Models</div>
+          </div>
+          <div style="flex: 1;">
+            <span class="keyword-badge" style="background: rgba(239, 68, 68, 0.1); color: #ef4444;">Declining</span>
+          </div>
+          <div style="flex: 1; text-align: center; color: var(--text-dim);">219</div>
+          <div style="flex: 1; text-align: center; font-weight: 700;">9</div>
+          <div style="flex: 1; text-align: right; font-weight: 700; color: #ef4444;">-95.9% ↓</div>
+        </div>
+
+        <div class="keyword-row">
+          <div style="flex: 2;">
+            <div style="font-weight: 600; margin-bottom: 0.25rem;">MIT Research Feed</div>
+            <div class="text-dim" style="font-size: 0.8rem;">Academic Signals</div>
+          </div>
+          <div style="flex: 1;">
+            <span class="keyword-badge" style="background: rgba(239, 68, 68, 0.1); color: #ef4444;">Declining</span>
+          </div>
+          <div style="flex: 1; text-align: center; color: var(--text-dim);">7</div>
+          <div style="flex: 1; text-align: center; font-weight: 700;">1</div>
+          <div style="flex: 1; text-align: right; font-weight: 700; color: #ef4444;">-85.7% ↓</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION: SEO BRIEF -->
+    <section id="seo-brief" class="dashboard-section">
+      <div class="report-meta card" style="margin-bottom: 2rem; border-left: 4px solid #6366f1; background: #1e293b;">
+        <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+          <div>
+            <h2 style="font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--accent-secondary); margin-bottom: 0.5rem;">Strategic Brief #04-88</h2>
+            <h3 style="font-size: 1.5rem; margin-bottom: 0.25rem;">ShieldAI: Early Warning Systems for LLM Bio-Threats</h3>
+            <p class="text-dim">Opportunity Score: <strong style="color: #10b981;">94.0</strong> (Critical Priority)</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="grid grid-2">
+        <!-- LEFT COLUMN: STRATEGY & INTENT -->
+        <div style="display: flex; flex-direction: column; gap: 1.5rem;">
+          <div class="card blue-ocean-card">
+            <h3 style="font-size: 0.9rem; text-transform: uppercase; color: var(--accent-primary); margin-bottom: 1rem;">🌊 Blue Ocean Strategic Angle</h3>
+            <p style="font-size: 1rem; line-height: 1.7; color: #cbd5e1;">
+              ShieldAI's team will utilize its expertise in LLM security and zero-trust architecture to develop robust early warning systems. This involves innovative machine learning techniques combined with real-time threat modeling to detect biological threats before they materialize. Emphasizing a proactive security approach will set the company apart from competitors.
+            </p>
+          </div>
+
+          <div class="card">
+            <h3 style="font-size: 0.9rem; text-transform: uppercase; color: var(--accent-primary); margin-bottom: 1rem;">Primary Keyword Velocity</h3>
+            <table style="width: 100%; border-collapse: collapse; font-size: 0.9rem; color: #cbd5e1;">
+              <thead>
+                <tr style="text-align: left; border-bottom: 1px solid rgba(255,255,255,0.1); color: var(--text-dim);">
+                  <th style="padding: 0.75rem 0.5rem;">Keyword</th>
+                  <th style="padding: 0.75rem 0.5rem; text-align: right;">Monthly Volume</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr style="border-bottom: 1px solid rgba(255,255,255,0.05);">
+                  <td style="padding: 0.75rem 0.5rem; font-weight: 600;">LLM security</td>
+                  <td style="padding: 0.75rem 0.5rem; text-align: right; color: #10b981;">12.4k</td>
+                </tr>
+                <tr style="border-bottom: 1px solid rgba(255,255,255,0.05);">
+                  <td style="padding: 0.75rem 0.5rem; font-weight: 600;">Bio-detection</td>
+                  <td style="padding: 0.75rem 0.5rem; text-align: right; color: #10b981;">4.1k</td>
+                </tr>
+                <tr style="border-bottom: 1px solid rgba(255,255,255,0.05);">
+                  <td style="padding: 0.75rem 0.5rem; font-weight: 600;">Zero-trust arch</td>
+                  <td style="padding: 0.75rem 0.5rem; text-align: right; color: #10b981;">18.5k</td>
+                </tr>
+                <tr>
+                  <td style="padding: 0.75rem 0.5rem; font-weight: 600;">Prompt defense</td>
+                  <td style="padding: 0.75rem 0.5rem; text-align: right; color: #10b981;">2.8k</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="card">
+            <h3 style="font-size: 0.9rem; text-transform: uppercase; color: var(--accent-primary); margin-bottom: 1.25rem;">🔗 Internal Linking Strategy</h3>
+            <p style="font-size: 0.9rem; line-height: 1.6; color: #94a3b8;">
+              Link to other articles on <strong>LLM security protocols</strong>, case studies of biological threat mitigations ShieldAI has successfully implemented, and a <strong>glossary of terms</strong> related to prompt injection, zero-trust architecture, and biological threat classification.
+            </p>
+          </div>
+        </div>
+
+        <!-- RIGHT COLUMN: STRUCTURE & INTENT -->
+        <div style="display: flex; flex-direction: column; gap: 1.5rem;">
+          <div class="card">
+            <h3 style="font-size: 0.9rem; text-transform: uppercase; color: var(--accent-primary); margin-bottom: 1.25rem;">Suggested Editorial Titles</h3>
+            <ul class="intent-list" style="font-size: 0.95rem;">
+               <li>"Integrating Zero-Trust Mechanisms for Early Detection in LLMs"</li>
+               <li>"Building a Reliable Warning System Against Biological Threats"</li>
+               <li>"Advancing Cybersecurity: Warning Systems for LLM-Enabled Threats"</li>
+            </ul>
+          </div>
+
+          <div class="card">
+            <h3 style="font-size: 0.9rem; text-transform: uppercase; color: var(--accent-primary); margin-bottom: 1.25rem;">Detailed Content Structure</h3>
+            <div style="display: flex; flex-direction: column; gap: 0.75rem;">
+              <div style="display: flex; align-items: flex-start; gap: 1rem;">
+                <span style="font-weight: 800; color: var(--accent-secondary);">01</span>
+                <div>
+                  <p style="font-weight: 600; color: white;">Introduction: Bio-Threats & LLMs</p>
+                  <p style="font-size: 0.8rem; color: #64748b;">Overview of the intersection between AI and biological security.</p>
+                </div>
+              </div>
+              <div style="display: flex; align-items: flex-start; gap: 1rem;">
+                <span style="font-weight: 800; color: var(--accent-secondary);">02</span>
+                <div>
+                  <p style="font-weight: 600; color: white;">The Failure of Traditional Measures</p>
+                  <p style="font-size: 0.8rem; color: #64748b;">Why classic SOC models don't scale to neural threats.</p>
+                </div>
+              </div>
+              <div style="display: flex; align-items: flex-start; gap: 1rem;">
+                <span style="font-weight: 800; color: var(--accent-secondary);">03</span>
+                <div>
+                  <p style="font-weight: 600; color: white;">Zero-Trust Implementation</p>
+                  <p style="font-size: 0.8rem; color: #64748b;">Technical integration of ML metrics and threat modeling.</p>
+                </div>
+              </div>
+              <div style="display: flex; align-items: flex-start; gap: 1rem;">
+                <span style="font-weight: 800; color: var(--accent-secondary);">04</span>
+                <div>
+                  <p style="font-weight: 600; color: white;">Case Study: Mitigation Vectors</p>
+                  <p style="font-size: 0.8rem; color: #64748b;">Successful early warning deployment for enterprise defense.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="card" style="border-top: 4px solid var(--accent-primary);">
+            <h3 style="font-size: 0.8rem; text-transform: uppercase; color: var(--accent-primary); margin-bottom: 1rem;">Reference Sources</h3>
+             <ul class="intent-list" style="font-size: 0.85rem; color: #94a3b8; list-style: none; padding: 0;">
+              <li style="margin-bottom: 0.75rem;"><a href="https://openai.com/index/accelerating-the-next-phase-ai" target="_blank" style="color: var(--accent-secondary); text-decoration: none; border-bottom: 1px solid rgba(99, 102, 241, 0.2);">Reference 01: Accelerating the next phase of AI (OpenAI)</a></li>
+              <li style="margin-bottom: 0.75rem;"><a href="https://venturebeat.com/orchestration/slack-adds-30-ai-features-to-slackbot" target="_blank" style="color: var(--accent-secondary); text-decoration: none; border-bottom: 1px solid rgba(99, 102, 241, 0.2);">Reference 02: Slack Agentic Ecosystem Update (VentureBeat)</a></li>
+              <li style="margin-bottom: 0.75rem;"><a href="https://www.cnbc.com/2026/03/31/openai-funding-round-ipo.html" target="_blank" style="color: var(--accent-secondary); text-decoration: none; border-bottom: 1px solid rgba(99, 102, 241, 0.2);">Reference 03: OpenAI $852B Valuation Analysis (CNBC)</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+    </section>
+
+    <!-- SECTION: NEWSLETTER PREVIEW -->
+    <section id="newsletter" class="dashboard-section">
+      <header>
+        <h1>Final Preview</h1>
+        <p class="subtitle">Editorial check for <strong>The Intelligence Loop</strong> (Aakash's Edition).</p>
+      </header>
+
+      <div class="card newsletter-viewport" style="background: #1e293b; padding: 2rem; overflow: hidden; border: 1px solid rgba(255,255,255,0.05);">
+        <div class="newsletter-scroller" style="max-height: 750px; overflow-y: auto; padding-right: 1.5rem;">
+          
+          <!-- EMAIL START -->
+          <div class="newsletter-container" style="box-shadow: 0 40px 80px rgba(0,0,0,0.6); background: #ffffff; border-radius: 4px;">
+            <div class="email-header" style="background: #ffffff; border-bottom: 4px solid #0f172a; text-align: left; padding: 3.5rem 3rem;">
+              <h2 style="color: #0f172a; font-weight: 900; font-size: 2rem; letter-spacing: -0.05em; margin: 0;">The Intelligence <span style="color: #6366f1;">Loop</span></h2>
+              <p style="color: #64748b; font-size: 0.9rem; font-weight: 500; margin-top: 0.5rem;">Curated by CurateAI • April 3, 2026</p>
+            </div>
+            
+            <div class="email-body" style="padding: 3.5rem 3rem;">
+              
+              <div style="margin-bottom: 3.5rem; color: #1e293b; font-size: 1.1rem; line-height: 1.6; border-left: 2px solid #6366f1; padding-left: 1.5rem;">
+                Good morning, Aakash. <br><br>
+                The market is leaning heavily into <strong>Agentic Orchestration</strong> this morning, with Amazon's Bedrock update setting a new ceiling for enterprise reliability. We've pulled 10 high-signal insights specifically for your B2B strategy, followed by today's 20 essential tech updates.
+              </div>
+
+              <!-- SECTION: THE BIG STORY -->
+              <div style="margin-bottom: 4rem;">
+                <h3 style="color: #0f172a; font-size: 1.4rem; font-weight: 800; margin-bottom: 1.5rem;">The Big Story</h3>
+                <div class="article-item" style="border: none; padding: 0;">
+                  <a href="#" class="article-title" style="font-size: 1.6rem; line-height: 1.2; color: #6366f1;">OpenAI closes funding round at an $852B valuation</a>
+                  <p class="article-summary" style="font-size: 1.1rem; color: #475569; margin-top: 1rem;">
+                    OpenAI on Tuesday announced that it closed a record-breaking funding round at a post-money valuation of $852 billion. The round totaled $122 billion of committed capital, with SoftBank co-leading the round.
+                  </p>
+                  <div style="margin-top: 1.5rem; padding: 1.5rem; background: #f8fafc; border-radius: 4px; font-size: 0.95rem; color: #1e293b; border-left: 4px solid #6366f1;">
+                    <strong style="display: block; margin-bottom: 0.5rem; color: #6366f1; text-transform: uppercase; font-size: 0.75rem; letter-spacing: 0.05em;">Editorial Analysis</strong>
+                    OpenAI's massive valuation underscores its dominance in the AI landscape. For researchers, this investment signifies an imperative to stay ahead of evolving threats and leverage emerging frontier AI technologies like ChatGPT and Codex as they scale globally.
+                  </div>
+                </div>
+              </div>
+
+              <!-- SECTION: DEEP DIVES (The rest of the 10 personalized) -->
+              <div style="margin-bottom: 4rem;">
+                <h3 style="color: #0f172a; font-size: 1.2rem; font-weight: 800; margin-bottom: 2rem;">Strategy Deep Dives</h3>
+                
+                <div style="display: grid; gap: 2.5rem;">
+                  <!-- Item 2 -->
+                  <div class="article-item" style="border: none; padding: 0;">
+                    <a href="#" class="article-title" style="font-size: 1.25rem; color: #1e293b;">Slack adds 30 AI features to Slackbot in most ambitious update yet</a>
+                    <p class="article-summary">From simple chatbot to autonomous coworker: Slack transforms Slackbot into a full-spectrum enterprise agent capable of conducting multi-step investigations via MCP integration.</p>
+                  </div>
+                  <!-- Item 3 -->
+                  <div class="article-item" style="border: none; padding: 0;">
+                    <a href="#" class="article-title" style="font-size: 1.25rem; color: #1e293b;">Accelerating the next phase of AI: OpenAI raises $122 billion</a>
+                    <p class="article-summary">New funding to expand frontier AI globally and meet growing demand for ChatGPT, Codex, and enterprise AI compute layers.</p>
+                  </div>
+                  
+                  <!-- Items 4-10 (Personalized Signals) -->
+                  <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2.5rem; margin-top: 1rem;">
+                     <div>
+                        <span class="signal-badge signal-market">Market Signal</span>
+                        <a href="#" style="font-weight: 800; color: #1e293b; text-decoration: none; display: block; margin-bottom: 0.5rem; font-size: 1.05rem;">The 'Humanoid Rig' Gig Economy</a>
+                        <p style="font-size: 0.85rem; color: #64748b; line-height: 1.5;">Hiring surges for robotic trainers as LLM-native makers look for specialized proprioceptive data.</p>
+                     </div>
+                     <div>
+                        <span class="signal-badge signal-tech">Technical Depth</span>
+                        <a href="#" style="font-weight: 800; color: #1e293b; text-decoration: none; display: block; margin-bottom: 0.5rem; font-size: 1.05rem;">Chain-of-Thought in GPT-4o</a>
+                        <p style="font-size: 0.85rem; color: #64748b; line-height: 1.5;">Lillian Weng summarizes the technical limits of multi-step reasoning in latest frontier models.</p>
+                     </div>
+                     <div>
+                        <span class="signal-badge signal-security">Privacy Signal</span>
+                        <a href="#" style="font-weight: 800; color: #1e293b; text-decoration: none; display: block; margin-bottom: 0.5rem; font-size: 1.05rem;">Semantic Deduplication ROI</a>
+                        <p style="font-size: 0.85rem; color: #64748b; line-height: 1.5;">New vector-database audit shows sanitizing noise from enterprise feeds saves $40k/mo in compute.</p>
+                     </div>
+                     <div>
+                        <span class="signal-badge signal-tech">Research Signal</span>
+                        <a href="#" style="font-weight: 800; color: #1e293b; text-decoration: none; display: block; margin-bottom: 0.5rem; font-size: 1.05rem;">AV Pipeline Trends 2026</a>
+                        <p style="font-size: 0.85rem; color: #64748b; line-height: 1.5;">The shift toward edge-first telemetry as fleet operators look to dodge cloud egress taxes.</p>
+                     </div>
+                     <div>
+                        <span class="signal-badge signal-market">Adoption Signal</span>
+                        <a href="#" style="font-weight: 800; color: #1e293b; text-decoration: none; display: block; margin-bottom: 0.5rem; font-size: 1.05rem;">The 'Agent Gap' in B2B SaaS</a>
+                        <p style="font-size: 0.85rem; color: #64748b; line-height: 1.5;">Why 60% of enterprise users abandon AI features when they can't cross-authenticate between tools.</p>
+                     </div>
+                     <div>
+                        <span class="signal-badge signal-tech">Infrastructure</span>
+                        <a href="#" style="font-weight: 800; color: #1e293b; text-decoration: none; display: block; margin-bottom: 0.5rem; font-size: 1.05rem;">Vector DB Benchmarks</a>
+                        <p style="font-size: 0.85rem; color: #64748b; line-height: 1.5;">How HNSW indexing at PB-scale is finally becoming cost-competitive with classic keyword search.</p>
+                     </div>
+                     <div style="grid-column: span 2; background: #f8fafc; padding: 1.5rem; border-radius: 4px; border: 1px solid #e2e8f0;">
+                         <span class="signal-badge signal-market" style="background: #1e293b; color: white;">Strategic Framework</span>
+                         <a href="#" style="font-weight: 800; color: #1e293b; text-decoration: none; display: block; margin-bottom: 0.5rem; font-size: 1.1rem;">The 'Intelligent Brief' ROI Model</a>
+                         <p style="font-size: 0.9rem; color: #475569; line-height: 1.6;">A first-of-its-kind calculator for justifying 7-figure content-intelligence infrastructure builds to your CFO.</p>
+                     </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- SECTION: THE PULSE (Common 20) -->
+              <div style="border-top: 2px solid #f1f5f9; padding-top: 4rem;">
+                <h3 style="color: #0f172a; font-size: 1.2rem; font-weight: 800; margin-bottom: 2rem;">The Pulse: Today's Tech Brief</h3>
+                
+                <div style="display: grid; gap: 2rem;">
+                  <!-- Sub-section: Big Tech -->
+                  <div>
+                    <h4 style="font-size: 0.9rem; color: #64748b; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 1rem;">Big Tech & Platforms</h4>
+                    <ul style="list-style: none; padding: 0;">
+                      <li style="padding: 0.75rem 0; border-bottom: 1px solid #f1f5f9; display: flex; gap: 1rem;">
+                        <span style="color: #6366f1; font-weight: 800;">11</span>
+                        <span><strong>Cameo & TikTok Partner</strong> to bring AI-celebrity avatars to your For You page.</span>
+                      </li>
+                      <li style="padding: 0.75rem 0; border-bottom: 1px solid #f1f5f9; display: flex; gap: 1rem;">
+                        <span style="color: #6366f1; font-weight: 800;">12</span>
+                        <span><strong>WhatsApp Spyware</strong> alert: Meta notifies users of new 'Gold Edition' phishing risks.</span>
+                      </li>
+                      <li style="padding: 0.75rem 0; border-bottom: 1px solid #f1f5f9; display: flex; gap: 1rem;">
+                        <span style="color: #6366f1; font-weight: 800;">13</span>
+                        <span><strong>Nothing Watch 3 Pro</strong> leaked images suggest a much larger solar-ready display.</span>
+                      </li>
+                      <li style="padding: 0.75rem 0; border-bottom: 1px solid #f1f5f9; display: flex; gap: 1rem;">
+                        <span style="color: #6366f1; font-weight: 800;">14</span>
+                        <span><strong>Cloudflare's EmDash</strong>: The new edge-accelerator specifically for headless WordPress.</span>
+                      </li>
+                      <li style="padding: 0.75rem 0; border-bottom: 1px solid #f1f5f9; display: flex; gap: 1rem;">
+                        <span style="color: #6366f1; font-weight: 800;">15</span>
+                        <span><strong>Alexa Plus</strong> adds food ordering via Uber Eats with 98% accuracy on voice intent.</span>
+                      </li>
+                    </ul>
+                  </div>
+
+                  <!-- Sub-section: AI & Research -->
+                  <div>
+                    <h4 style="font-size: 0.9rem; color: #64748b; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 1rem;">Research & Breakthroughs</h4>
+                    <ul style="list-style: none; padding: 0;">
+                      <li style="padding: 0.75rem 0; border-bottom: 1px solid #f1f5f9; display: flex; gap: 1rem;">
+                        <span style="color: #2dd4bf; font-weight: 800;">16</span>
+                        <span><strong>Quantum Day 2029</strong>: Google researchers pull the timeline forward by 3 years.</span>
+                      </li>
+                      <li style="padding: 0.75rem 0; border-bottom: 1px solid #f1f5f9; display: flex; gap: 1rem;">
+                        <span style="color: #2dd4bf; font-weight: 800;">17</span>
+                        <span><strong>MIT's 3D Visualization Tool</strong> allows makers to 'see' heat stress in printed objects.</span>
+                      </li>
+                      <li style="padding: 0.75rem 0; border-bottom: 1px solid #f1f5f9; display: flex; gap: 1rem;">
+                        <span style="color: #2dd4bf; font-weight: 800;">18</span>
+                        <span><strong>Meta for Cement</strong>: AI models optimized for reducing concrete carbon footprints.</span>
+                      </li>
+                      <li style="padding: 0.75rem 0; border-bottom: 1px solid #f1f5f9; display: flex; gap: 1rem;">
+                        <span style="color: #2dd4bf; font-weight: 800;">19</span>
+                        <span><strong>Falcon Perception</strong>: TII launches a multi-modal model that rivals GPT-Vision.</span>
+                      </li>
+                      <li style="padding: 0.75rem 0; border-bottom: 1px solid #f1f5f9; display: flex; gap: 1rem;">
+                        <span style="color: #2dd4bf; font-weight: 800;">20</span>
+                        <span><strong>Reward Hacking RLHF</strong>: New OpenAI study on why AI agents 'cheat' on benchmarks.</span>
+                      </li>
+                    </ul>
+                  </div>
+
+                  <!-- Sub-section: Space & Hardware -->
+                  <div>
+                    <h4 style="font-size: 0.9rem; color: #64748b; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 1rem;">Future Tech & Space</h4>
+                    <ul style="list-style: none; padding: 0;">
+                      <li style="padding: 0.75rem 0; border-bottom: 1px solid #f1f5f9; display: flex; gap: 1rem;">
+                        <span style="color: #ec4899; font-weight: 800;">21</span>
+                        <span><strong>NASA Artemis II</strong> capsule testing reveals 'unexpected' integrity at high-burn.</span>
+                      </li>
+                      <li style="padding: 0.75rem 0; border-bottom: 1px solid #f1f5f9; display: flex; gap: 1rem;">
+                        <span style="color: #ec4899; font-weight: 800;">22</span>
+                        <span><strong>Deep Sea Submersibles</strong>: AI-steered probes reach new depths in the Mariana Trench.</span>
+                      </li>
+                      <li style="padding: 0.75rem 0; border-bottom: 1px solid #f1f5f9; display: flex; gap: 1rem;">
+                        <span style="color: #ec4899; font-weight: 800;">23</span>
+                        <span><strong>Exo-Skeleton UX</strong>: Why current industrial suits fail the '8-hour shift' test.</span>
+                      </li>
+                      <li style="padding: 0.75rem 0; border-bottom: 1px solid #f1f5f9; display: flex; gap: 1rem;">
+                        <span style="color: #ec4899; font-weight: 800;">24</span>
+                        <span><strong>Crypto Trust Layer</strong>: Coinfellows secures $50M to build 'inter-agent' escrows.</span>
+                      </li>
+                      <li style="padding: 0.75rem 0; border-bottom: 1px solid #f1f5f9; display: flex; gap: 1rem;">
+                        <span style="color: #ec4899; font-weight: 800;">25</span>
+                        <span><strong>Satellite Deforestation Data</strong>: Google Earth adds real-time canopy shift alerts.</span>
+                      </li>
+                    </ul>
+                  </div>
+
+                  <!-- Sub-section: Culture & Economy -->
+                  <div>
+                    <h4 style="font-size: 0.9rem; color: #64748b; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 1rem;">Culture & Digital Economy</h4>
+                    <ul style="list-style: none; padding: 0;">
+                      <li style="padding: 0.75rem 0; border-bottom: 1px solid #f1f5f9; display: flex; gap: 1rem;">
+                        <span style="color: #f97316; font-weight: 800;">26</span>
+                        <span><strong>Militia Influencers</strong>: The strange rise of tactical gear creators on TikTok.</span>
+                      </li>
+                      <li style="padding: 0.75rem 0; border-bottom: 1px solid #f1f5f9; display: flex; gap: 1rem;">
+                        <span style="color: #f97316; font-weight: 800;">27</span>
+                        <span><strong>Thinking Models</strong>: How reasoning chains are changing the gig economy for coders.</span>
+                      </li>
+                      <li style="padding: 0.75rem 0; border-bottom: 1px solid #f1f5f9; display: flex; gap: 1rem;">
+                        <span style="color: #f97316; font-weight: 800;">28</span>
+                        <span><strong>The Download</strong>: Why gig workers are now humanoid robot trainers by day.</span>
+                      </li>
+                      <li style="padding: 0.75rem 0; border-bottom: 1px solid #f1f5f9; display: flex; gap: 1rem;">
+                        <span style="color: #f97316; font-weight: 800;">29</span>
+                        <span><strong>Datasette Enrichment</strong>: Simon Willison's new tool for semantic CSV cleaning.</span>
+                      </li>
+                      <li style="padding: 0.75rem 0; border-bottom: 1px solid #f1f5f9; display: flex; gap: 1rem;">
+                        <span style="color: #f97316; font-weight: 800;">30</span>
+                        <span><strong>Atomic Defects Research</strong>: Using AI to find cracks in aircraft-grade materials.</span>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+              <div style="padding-top: 5rem; text-align: center; border-top: 1px solid #f1f5f9; margin-top: 4rem;">
+                <p style="color: #64748b; font-size: 0.95rem; margin-bottom: 2rem;">You're all caught up. See you tomorrow.</p>
+                <button style="background: #6366f1; color: white; border: none; padding: 1.25rem 3rem; border-radius: 4px; font-weight: 800; cursor: pointer; text-transform: uppercase; letter-spacing: 0.1em;">View More</button>
+              </div>
+
+            </div>
+
+            <div style="background: #f8fafc; padding: 4rem 3rem; text-align: center; color: #94a3b8; font-size: 0.85rem; border-bottom-left-radius: 4px; border-bottom-right-radius: 4px;">
+               <p style="margin-bottom: 1.5rem;">Thanks for subscribing to <strong>CurateAI</strong>.</p>
+               <div style="display: flex; gap: 2rem; justify-content: center; font-size: 0.8rem;">
+                 <a href="#" style="color: #64748b; text-decoration: none;">Preference Center</a>
+                 <a href="#" style="color: #64748b; text-decoration: none;">Unsubscribe</a>
+               </div>
+            </div>
+          </div>
+          <!-- EMAIL END -->
+
+        </div>
+      </div>
+    </section>
+          <!-- EMAIL END -->
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <script>
+    function switchTab(tabId) {
+      // Deactivate all sections
+      document.querySelectorAll('.dashboard-section').forEach(sec => {
+        sec.style.display = 'none';
+        sec.classList.remove('active');
+      });
+      
+      // Show target
+      const target = document.getElementById(tabId);
+      if (target) {
+        target.style.display = 'block';
+        target.classList.add('active');
+      }
+      
+      // Update sidebar
+      document.querySelectorAll('nav li').forEach(li => li.classList.remove('active'));
+      const navItems = document.querySelectorAll('nav li');
+      if (tabId === 'trending') navItems[0].classList.add('active');
+      if (tabId === 'seo-brief') navItems[1].classList.add('active');
+      if (tabId === 'newsletter') navItems[2].classList.add('active');
+    }
+    
+    window.onload = () => switchTab('trending');
+  </script>
+</body>
+</html>

@@ -56,6 +56,7 @@ WE ATTEST THAT WE HAVEN'T USED ANY OTHER STUDENTS' WORK IN OUR ASSIGNMENT AND AB
 ![SpaCy](https://img.shields.io/badge/SpaCy-NER_Engine-09A3D5?style=for-the-badge&logo=spacy&logoColor=white)
 ![Pydantic](https://img.shields.io/badge/Pydantic-V2_Schemas-E92063?style=for-the-badge&logo=pydantic&logoColor=white)
 ![Prometheus](https://img.shields.io/badge/Prometheus-Observability-E6522C?style=for-the-badge&logo=prometheus&logoColor=white)
+![pdfplumber](https://img.shields.io/badge/pdfplumber-PDF_Parsing-4B8BBE?style=for-the-badge&logo=python&logoColor=white)
 
 ---
 
@@ -93,13 +94,13 @@ We aim to deliver across four key areas:
 
 **Data Sources:** 30+ RSS feeds (TechCrunch, The Verge, Wired, Ars Technica, VentureBeat, MIT Technology Review, IEEE Spectrum, Bloomberg, BBC Tech, NYT Tech), AI blogs (OpenAI, DeepMind, Hugging Face, NVIDIA, Microsoft Research), research feeds (ArXiv cs.AI, cs.LG), social platforms (Reddit — 5 subreddits; Hacker News), and NewsAPI.org. Validated throughput: 3,129 raw articles per cycle.
 
-**ETL Pipelines:** Automated multi-source ingestion via Airflow DAGs, full-text extraction with trafilatura (85%+ success rate), semantic dedup using Sentence-Transformer vectors, hybrid topic classification (keyword + LLM fallback), and batch embedding generation.
+**ETL Pipelines:** Automated multi-source ingestion via Airflow DAGs, full-text extraction with trafilatura (85%+ success rate), semantic dedup using Sentence-Transformer vectors, hybrid multi-label topic classification (keyword + LLM fallback with weighted category assignment), and batch embedding generation.
 
-**LLM Components:** LangGraph multi-agent system with Topic Classifier, Trend Detector, Persona-Aware Summarizer, Writer Agent, and Editor Agent. RAG over article corpus via Qdrant.
+**LLM Components:** LangGraph multi-agent system with Topic Classifier (multi-label), Trend Detector, Persona-Aware Summarizer, Writer Agent, and Editor Agent. RAG over article corpus via Qdrant. Cold-start profile extraction from LinkedIn PDF/resume via GPT-4o-mini.
 
 **Cloud Infrastructure:** Snowflake, GCS, Qdrant, Airflow, FastAPI, Next.js, Docker Compose.
 
-**Guardrails & HITL:** Editor Agent validates citations, detects hallucinations, enforces tone consistency. Pydantic schema enforcement. Human editors review and approve drafts. Feedback loop into personalization.
+**Guardrails & HITL:** Editor Agent validates citations, detects hallucinations, enforces tone consistency. Pydantic schema enforcement. Human editors review and approve drafts. Feedback loop into personalization. Behavioral refinement adjusts user profiles based on engagement signals (thumbs up/down/skip).
 
 **Evaluation:** Classification accuracy, dedup precision/recall, newsletter quality (LLM-as-judge rubric), citation accuracy, cost tracking, latency.
 
@@ -296,13 +297,15 @@ Validates that different personas receive meaningfully different content. Only 2
 
 ### 5.4 Data Processing & Transformation
 
-**Batch Processing:** Three Airflow DAGs run daily: `content_ingestion` (fetch, normalize, dedup), `content_classification` (keyword + LLM tagging), `trend_computation` (cluster analysis, scoring, tag assignment).
+**Batch Processing:** Four Airflow DAGs run on schedule: `content_ingestion` (daily — fetch, normalize, dedup), `content_classification` (daily — multi-label keyword + LLM tagging with weighted categories), `trend_computation` (daily — cluster analysis, scoring, tag assignment), and `behavioral_refinement` (weekly — adjust user category weights based on engagement signals).
 
-**Data Formats:** Raw: XML (RSS), JSON (Reddit/HN APIs), HTML (full-text). All normalized to common JSON schema. Stored as structured rows in Snowflake.
+**Data Formats:** Raw: XML (RSS), JSON (Reddit/HN APIs), HTML (full-text), PDF (LinkedIn/resume uploads). All normalized to common JSON schema. Stored as structured rows in Snowflake.
 
 **Parallel Processing:** Airflow dynamic task mapping for per-source parallel ingestion. Embedding generation batched at 100–500 articles. Persona summarization parallelized via `asyncio.gather`.
 
 **Dual Embedding Strategy:** Sentence-Transformers (`all-MiniLM-L6-v2`) locally for dedup (zero cost, 2.5s/1K titles). OpenAI `text-embedding-3-small` for RAG vector store (higher quality, $0.02/1M tokens).
+
+**Multi-Label Classification:** Articles receive 2–3 weighted category labels instead of a single label. For example, "Prompt injection attacks on GPT-5 raise EU concerns" is tagged as Security(0.5) + LLMs(0.3) + AI Policy(0.2), surfacing it for all three audiences. The hybrid keyword-first approach still handles ~70% of articles for free; the remaining 30% use GPT-4o-mini with a Pydantic `MultiLabelClassification` schema.
 
 ### 5.5 LLM Integration Strategy
 
@@ -336,6 +339,83 @@ Total LLM Cost per Newsletter: $0.07–$0.11 (Polished Mode) or ~$0.01 (Fast Mod
 
 **HITL Loop:** Human editors receive drafts in the Next.js editor. They can approve, edit sections, swap articles, or reject with feedback. Feedback stored in Snowflake and used to refine personalization weights.
 
+### 5.9 Personalization Engine Enhancements (Phase 4)
+
+Based on professor's feedback during the proposal presentation, three critical personalization improvements are incorporated into the pipeline, forming a **personalization lifecycle**: Cold Start (bootstrap) → Latent Clusters (richer matching) → Behavioral Patterns (continuous learning).
+
+#### Enhanced Pipeline
+
+```
+[Ingestion] → [Dedup] → [MULTI-LABEL Classification] → [Trend Detection]
+    → [User uploads LinkedIn PDF / Resume] → [LLM extracts bio + category_weights]
+    → [Bio → vector + category weights stored]
+    → [ENHANCED scoring: 40% vector + 35% category overlap + 25% trend]
+    → [Dual-Layer: Highlights + Gems] → [Newsletter]
+    → [User engagement: thumbs up/down/skip]
+    → [BEHAVIORAL REFINEMENT: adjust category_weights weekly]
+    → [Better next newsletter]
+```
+
+#### Where Each Enhancement Plugs In
+
+| Enhancement | Replaces/Extends | Where | Why |
+| :--- | :--- | :--- | :--- |
+| Cold Start (LinkedIn PDF) | Manual bio input | User onboarding | Users won't write bios. LinkedIn PDF has work history, skills, about — produces same output with zero effort |
+| Multi-Label Classification | Single-label classifier | Classification DAG | Article about "prompt injection on GPT-5" currently tagged only "Security." Multi-label tags it Security(0.5)+LLMs(0.3)+Policy(0.2) |
+| Enhanced Scoring Formula | Cosine-only ranking | Personalization formula | Article hitting 3 user interests should rank higher than one hitting 1, even with slightly lower vector similarity |
+| Behavioral Refinement | Static profile | New weekly Airflow DAG | User says "Research Papers" but consistently skips them and clicks "AI Agents." Profile should adapt |
+
+**What Does NOT Change:** Ingestion, deduplication, trend detection, persona-first caching, Writer/Editor agents, newsletter assembly, B2B SEO pipeline, SpaCy NER velocity, MCP server, Prometheus — all unchanged.
+
+#### P1: Cold Start — LinkedIn PDF & Resume Import
+
+LinkedIn lets users download their profile as PDF ("More → Save to PDF"). This PDF contains headline, About section, full work history, skills, education, and certifications — the richest interest signal available, obtainable in 10 seconds.
+
+The pipeline works as follows:
+1. **PDF Text Extraction + Type Detection:** Extract text via `pdfplumber`. Detect LinkedIn PDF vs resume via structural markers ("linkedin.com/in/", "Experience", "Top Skills", etc.). 3+ markers = LinkedIn PDF.
+2. **Smart Section Extraction (LinkedIn-aware):** LinkedIn PDF: split by known headers (About, Experience, Skills, Education) and build priority context: header(500ch) + About(800ch) + Experience(1500ch) + Skills(500ch). Resume PDF: take first 3000 chars (less structured).
+3. **LLM Profile Extraction:** GPT-4o-mini with Pydantic `UserInterestProfile` schema: job_title, seniority, primary_interests, technical_skills, bio_summary (for vector encoding), category_weights (mapped to taxonomy). Weights based on CURRENT role, not just mentions. Weights do NOT need to sum to 1.0.
+4. **Validation:** Auto-extracted profile produces similar rankings as manual bio (>70% top-10 overlap target).
+5. **Onboarding Flow:** Upload → detect type → extract sections → LLM profile → show "We detected: [interests]" → user adjusts → confirm. Total latency target: <5 seconds. Cost: <$0.01 per extraction.
+
+#### P2: Multi-Label Article Classification
+
+Articles receive 2–3 weighted category labels instead of a single label. The hybrid pipeline retains cost efficiency: keyword-first handles ~70% free, GPT-4o-mini fallback with `MultiLabelClassification` Pydantic schema for the remaining 30%. Target: >60% of articles receive 2+ meaningful labels.
+
+#### P3: Enhanced Personalization Scoring
+
+Replaces pure cosine similarity with a composite scoring formula:
+
+```
+final_score = (vector_similarity × 0.40) + (category_overlap × 0.35) + (trend_signal × 0.25)
+```
+
+Category overlap includes a bonus: 3+ categories hit → 20% boost. This ensures an article matching multiple user interests ranks higher than one with slightly higher vector similarity but only a single interest match. Target: 40–60% of top-10 articles differ between cosine-only and Method C scoring.
+
+#### P4: Behavioral Refinement
+
+User profiles evolve based on actual engagement, not just initial declaration. A weekly Airflow DAG processes engagement signals (thumbs up/down/skip):
+
+1. Count positive/negative signals per category.
+2. Normalize behavioral weights to 0–1.
+3. Blend: `refined = (explicit × 0.8) + (behavioral × 0.2)`.
+4. Filter noise: drop categories <0.05.
+
+Example: ML Engineer declared "Research Papers: 0.4" but consistently skips papers and clicks Agents content → Agents weight ↑, Research weight ↓, and undeclared interest in Cloud appears (~0.1–0.2). Target: 3–5 articles shift 3+ spots in the personalized ranking after refinement.
+
+#### P5: Full Lifecycle End-to-End
+
+Validates the complete personalization lifecycle in a single execution:
+1. Upload LinkedIn PDF → extract profile (P1)
+2. Multi-label classify articles (P2)
+3. Initial personalization with Method C (P3) → Day 1 newsletter
+4. Simulate 7 days engagement
+5. Behavioral refinement (P4) → updated weights
+6. Re-personalize → Day 8 newsletter
+7. Report: initial vs refined, articles shifted, new interests discovered, cost
+
+Targets: <30 seconds total, <$0.05 total cost.
+
 ### 5.7 Evaluations & Testing
 
 **Classification Accuracy:** Golden set of 100 labeled articles. Target: 80%+ keyword-only, 90%+ hybrid.
@@ -354,7 +434,7 @@ Total LLM Cost per Newsletter: $0.07–$0.11 (Polished Mode) or ~$0.01 (Fast Mod
 
 ### 5.8 Proof of Concept (POC)
 
-All 11 prototypes have been completed and validated:
+All 11 core prototypes plus 5 personalization enhancement prototypes have been completed and validated:
 
 | Prototype | Result | Key Metric |
 | :--- | :--- | :--- |
@@ -370,6 +450,12 @@ All 11 prototypes have been completed and validated:
 | S4: Content Briefs | Pydantic ContentBrief via GPT-4o-mini | 3 distinct angles for same topic |
 | S5: Keyword Velocity | SpaCy NER dynamic entity discovery | Top surging entities match real trends |
 | S6: SEO Dashboard | Unified B2C + B2B master pipeline | Single execution, dual output streams |
+| --- Phase 4: Personalization Enhancements --- | | |
+| P1: Cold Start Import | LinkedIn PDF extraction via pdfplumber + GPT-4o-mini | >70% top-10 overlap with manual bio |
+| P2: Multi-Label Classification | Weighted multi-category tagging | >60% articles get 2+ labels |
+| P3: Enhanced Scoring | Composite formula: vec(0.4)+overlap(0.35)+trend(0.25) | 40–60% top-10 articles differ from cosine-only |
+| P4: Behavioral Refinement | Engagement-driven weight adjustment | 3–5 articles shift 3+ spots |
+| P5: Full Lifecycle E2E | Upload PDF → classify → personalize → engage → refine | <30s, <$0.05 total |
 
 ---
 
@@ -456,6 +542,16 @@ All task tracking is managed via GitHub Projects Kanban Board with columns: Back
 | Content brief company-specificity | 3 distinct angles/same topic | Side-by-side brief comparison |
 | SpaCy NER entity precision | Top 3 surging verifiable | Cross-check with HN front page |
 | Content brief cost | ≤$0.10 per brief | Token tracking per generation |
+| --- Phase 4: Personalization Enhancements --- | | |
+| Cold start extraction quality | >70% top-10 overlap with manual bio | Side-by-side ranking comparison |
+| LinkedIn PDF section detection | 3+ structural markers detected | pdfplumber extraction test |
+| Multi-label coverage | >60% articles get 2+ meaningful labels | Classification audit on 30 articles |
+| Multi-label cost efficiency | ~70% keyword (free), 30% LLM | Token tracking per classification |
+| Enhanced scoring differentiation | 40–60% top-10 articles differ from cosine-only | Method A vs Method C comparison |
+| Behavioral weight shift intuitiveness | 3–5 articles shift 3+ spots after refinement | Pre/post ranking comparison |
+| Undeclared interest discovery | New category appears from behavior | Profile diff analysis |
+| Full lifecycle latency | <30 seconds end-to-end | Timer on P5 prototype |
+| Full lifecycle cost | <$0.05 total | Token tracking across P5 |
 
 ### 9.2 Expected Benefits
 
@@ -488,14 +584,16 @@ Fast Mode: Template assembly skips Writer + Editor, reducing cost to ~$0.01/news
 | Summarization (5 archetypes × 30 articles) | ~$0.30 | ~$9.00 |
 | Writer Agent (10 newsletters/day) | ~$0.15 | ~$4.50 |
 | Editor Agent (10 newsletters/day) | ~$0.20 | ~$6.00 |
-| Classification fallback | ~$0.003 | ~$0.09 |
+| Classification fallback (multi-label) | ~$0.003 | ~$0.09 |
 | Embeddings (text-embedding-3-small) | ~$0.02 | ~$0.60 |
-| **TOTAL** | **~$0.67** | **~$20.19** |
+| Cold Start Profile Extraction (5 new users/day) | ~$0.05 | ~$1.50 |
+| Behavioral Refinement (weekly, local compute) | $0.00 | $0.00 |
+| **TOTAL** | **~$0.72** | **~$21.69** |
 | --- B2B SEO Layer --- | | |
 | Content Brief Generation (5/day) | ~$0.50 | ~$15.00 |
 | SpaCy NER + Velocity (local) | $0.00 | $0.00 |
 | SEO Opportunity Scoring (local) | $0.00 | $0.00 |
-| **COMBINED TOTAL (B2C + B2B)** | **~$1.17** | **~$35.19** |
+| **COMBINED TOTAL (B2C + B2B)** | **~$1.22** | **~$36.69** |
 
 ---
 
@@ -526,6 +624,7 @@ The persona-first caching architecture solves the critical scalability challenge
 - Sentence-Transformers — https://www.sbert.net/
 - LiteLLM — https://docs.litellm.ai/
 - trafilatura — https://trafilatura.readthedocs.io/
+- pdfplumber — https://github.com/jsvine/pdfplumber
 - Pydantic V2 — https://docs.pydantic.dev/
 - MCP SDK — https://modelcontextprotocol.io/
 
@@ -621,19 +720,27 @@ for i in range(len(articles)):
     cluster = merge_sources(articles[similar])
 ```
 
-**E.4 Hybrid Topic Classification (classification_prototype.py)**
+**E.4 Hybrid Multi-Label Topic Classification (classification_prototype.py / multilabel_classification_prototype.py)**
 
-Keyword-first approach handles 70% of articles for free. GPT-4o-mini fallback classifies ambiguous cases with structured Pydantic output.
+Keyword-first approach handles 70% of articles for free. GPT-4o-mini fallback classifies ambiguous cases with structured Pydantic output. Enhanced to return 2–3 weighted category labels per article.
 
 ```python
-def hybrid_classify(title, summary, client):
-    # Phase 1: Free keyword check
+class MultiLabelClassification(BaseModel):
+    categories: list[CategoryWeight]  # 2-3 weighted labels
+    reasoning: str
+
+def hybrid_classify_multilabel(title, summary, client):
+    # Phase 1: Free keyword check — count hits across ALL categories
+    hits = {}
     for category, keywords in AXIOMATIC_KEYWORDS.items():
-        if any(kw in text.lower() for kw in keywords):
-            return TopicClassification(category, 0.9)
-    # Phase 2: LLM fallback (structured output)
+        score = sum(1 for kw in keywords if kw in text.lower())
+        if score > 0: hits[category] = score
+    if hits:
+        total = sum(hits.values())
+        return [CategoryWeight(cat, s/total) for cat, s in hits.items()][:3]
+    # Phase 2: LLM fallback (structured multi-label output)
     return client.beta.chat.completions.parse(
-        model='gpt-4o-mini', response_format=TopicClassification)
+        model='gpt-4o-mini', response_format=MultiLabelClassification)
 ```
 
 **E.5 Trend Detection (trend_detection_prototype.py)**
@@ -649,18 +756,30 @@ def detect_trends(articles):
         article['ranking_score'] = cluster*10 + pop + boost
 ```
 
-**E.6 Dual-Layer Personalization (personalization_prototype.py)**
+**E.6 Dual-Layer Personalization with Enhanced Scoring (personalization_prototype.py / enhanced_personalization_prototype.py)**
 
-Layer 1: Global Top 20 re-ordered by user bio vector similarity. Layer 2: Scans remaining 700+ articles to find niche gems matching user interests.
+Layer 1: Global Top 20 re-ordered by composite scoring formula. Layer 2: Scans remaining 700+ articles to find niche gems matching user interests. Enhanced Method C replaces pure cosine similarity.
 
 ```python
 user_vector = model.encode([user['bio']])[0]
-# Layer 1: Re-rank global highlights
+user_weights = user['category_weights']  # from LinkedIn PDF or manual
+
+# Enhanced scoring: Method C
+def compute_score(article, user_vector, user_weights):
+    vec_sim = cosine_similarity(user_vector, article_vector)
+    # Category overlap using multi-label weights
+    overlap = sum(min(user_weights.get(c, 0), w)
+                  for c, w in article['category_weights'].items())
+    if len(matching_categories) >= 3: overlap *= 1.20  # 3+ hit bonus
+    trend = article.get('trend_score', 0)
+    return (vec_sim * 0.40) + (overlap * 0.35) + (trend * 0.25)
+
+# Layer 1: Re-rank global highlights with Method C
 for article in global_top_20:
-    sim = cosine_similarity(user_vector, article_vector)
+    article['score'] = compute_score(article, user_vector, user_weights)
 # Layer 2: Find hidden gems from remaining 700+
 for article in other_articles:
-    niche_score = sim + category_boost + cluster_bonus
+    niche_score = compute_score(article, user_vector, user_weights)
 ```
 
 **E.7 Editor Agent / Guardrails (editor_agent_prototype.py)**
@@ -690,6 +809,59 @@ for article in unique_articles:
 # 1000 users with 5 archetypes = only 5 LLM calls/article
 ```
 
+**E.9 Cold Start — LinkedIn PDF Profile Import (coldstart_profile_import_prototype.py)**
+
+Extracts structured interest profiles from LinkedIn PDF downloads or resumes using pdfplumber + GPT-4o-mini. Replaces manual bio entry.
+
+```python
+import pdfplumber
+
+def extract_profile_from_pdf(pdf_path, client):
+    with pdfplumber.open(pdf_path) as pdf:
+        text = '\n'.join(p.extract_text() or '' for p in pdf.pages)
+    # Detect type: LinkedIn PDF vs resume
+    markers = ['linkedin.com/in/', 'Experience', 'Top Skills', 'Education']
+    is_linkedin = sum(1 for m in markers if m in text) >= 3
+    # Section extraction (LinkedIn-aware)
+    if is_linkedin:
+        context = extract_linkedin_sections(text)  # header+About+Exp+Skills
+    else:
+        context = text[:3000]
+    # LLM profile extraction with Pydantic schema
+    class UserInterestProfile(BaseModel):
+        job_title: str
+        bio_summary: str  # for vector encoding
+        category_weights: dict[str, float]  # mapped to taxonomy
+    return client.beta.chat.completions.parse(
+        model='gpt-4o-mini', response_format=UserInterestProfile)
+```
+
+**E.10 Behavioral Refinement (behavioral_refinement_prototype.py)**
+
+Adjusts user category weights weekly based on engagement signals. Discovers undeclared interests.
+
+```python
+def refine_weights(explicit_weights, engagement_log):
+    # Count signals per category
+    cat_signals = defaultdict(lambda: {'pos': 0, 'neg': 0})
+    for event in engagement_log:
+        for cat in event['article_categories']:
+            if event['action'] == 'thumbs_up': cat_signals[cat]['pos'] += 1
+            elif event['action'] == 'thumbs_down': cat_signals[cat]['neg'] += 1
+    # Normalize behavioral weights
+    behavioral = {cat: s['pos']/(s['pos']+s['neg']+1)
+                  for cat, s in cat_signals.items()}
+    # Blend: explicit dominates, behavior nudges
+    refined = {}
+    all_cats = set(explicit_weights) | set(behavioral)
+    for cat in all_cats:
+        e = explicit_weights.get(cat, 0)
+        b = behavioral.get(cat, 0)
+        refined[cat] = (e * 0.8) + (b * 0.2)
+    # Filter noise
+    return {c: w for c, w in refined.items() if w >= 0.05}
+```
+
 ### F. Prototype File Manifest
 
 All 18 prototype scripts are available in the GitHub repository under `/prototyping/`:
@@ -714,3 +886,9 @@ All 18 prototype scripts are available in the GitHub repository under `/prototyp
 | Report: Funnel | funnel_report_generator.py | Global ingestion funnel with TF-IDF vs Vector comparison |
 | Report: Vector Metrics | vector_metrics_generator.py | Vector dedup funnel metrics CSV generation |
 | Report: WP API | wp_api_analyzer.py | WordPress API pagination test for TechCrunch/VentureBeat |
+| --- Phase 4: Personalization Enhancements --- | | |
+| P1: Cold Start Import | coldstart_profile_import_prototype.py | LinkedIn PDF / resume extraction via pdfplumber + GPT-4o-mini |
+| P2: Multi-Label Classification | multilabel_classification_prototype.py | Weighted multi-category tagging with hybrid pipeline |
+| P3: Enhanced Scoring | enhanced_personalization_prototype.py | Composite scoring: vec(0.4)+overlap(0.35)+trend(0.25) |
+| P4: Behavioral Refinement | behavioral_refinement_prototype.py | Engagement-driven weight adjustment with blend formula |
+| P5: Full Lifecycle | personalization_lifecycle_prototype.py | End-to-end: PDF upload → classify → personalize → engage → refine |

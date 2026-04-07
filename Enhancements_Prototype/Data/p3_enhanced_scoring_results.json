@@ -1,0 +1,689 @@
+[
+  {
+    "user_name": "Aakash Belide",
+    "job_title": "Data Science Intern",
+    "shift_difference": 8,
+    "method_a_top_10": [
+      {
+        "title": "AI for Enterprise:  A Practitioner's Guide",
+        "vec_score": 0.4645302891731262,
+        "overlap_score": 0.6000000000000001,
+        "hybrid_score": 0.42581209540367126,
+        "categories": {
+          "AI Agents": 0.4,
+          "AI Policy": 0.35,
+          "LLMs": 0.25
+        }
+      },
+      {
+        "title": "US Needs to Invest More in AI Buildout, Says Cato\u2019s Frazier",
+        "vec_score": 0.419964462518692,
+        "overlap_score": 0.396,
+        "hybrid_score": 0.33658578991889954,
+        "categories": {
+          "AI Policy": 0.4,
+          "General AI": 0.32,
+          "Startups": 0.28
+        }
+      },
+      {
+        "title": "Can your governance keep pace with your AI ambitions? AI risk intelligence in the agentic era",
+        "vec_score": 0.4154670238494873,
+        "overlap_score": 0.496,
+        "hybrid_score": 0.3697868287563324,
+        "categories": {
+          "AI Policy": 0.42,
+          "AI Agents": 0.37,
+          "Security": 0.21
+        }
+      },
+      {
+        "title": "ASI-Evolve: AI Accelerates AI",
+        "vec_score": 0.4035836458206177,
+        "overlap_score": 0.6,
+        "hybrid_score": 0.40143343806266785,
+        "categories": {
+          "AI Agents": 0.36,
+          "AI Policy": 0.34,
+          "LLMs": 0.3
+        }
+      },
+      {
+        "title": "The Future of AI is Many, Not One",
+        "vec_score": 0.4013773202896118,
+        "overlap_score": 0.6040000000000001,
+        "hybrid_score": 0.4019509255886078,
+        "categories": {
+          "AI Agents": 0.34,
+          "LLMs": 0.33,
+          "AI Policy": 0.33
+        }
+      },
+      {
+        "title": "Phyelds: A Pythonic Framework for Aggregate Computing",
+        "vec_score": 0.38558733463287354,
+        "overlap_score": 1.0,
+        "hybrid_score": 0.534234881401062,
+        "categories": {
+          "Data Engineering": 0.38,
+          "AI Agents": 0.33,
+          "Software Engineering": 0.3
+        }
+      },
+      {
+        "title": "ELT-Bench-Verified: Benchmark Quality Issues Underestimate AI Agent Capabilities",
+        "vec_score": 0.385573148727417,
+        "overlap_score": 0.6379999999999999,
+        "hybrid_score": 0.4075292646884918,
+        "categories": {
+          "LLMs": 0.36,
+          "AI Agents": 0.35,
+          "AI Policy": 0.29
+        }
+      },
+      {
+        "title": "Owl-AuraID 1.0: An Intelligent System for Autonomous Scientific Instrumentation and Scientific Data Analysis",
+        "vec_score": 0.3843797445297241,
+        "overlap_score": 0.75,
+        "hybrid_score": 0.44625189900398254,
+        "categories": {
+          "AI Agents": 0.38,
+          "Data Engineering": 0.37,
+          "Hardware": 0.25
+        }
+      },
+      {
+        "title": "15% of Americans say they\u2019d be willing to work for an AI boss, according to new poll",
+        "vec_score": 0.38347315788269043,
+        "overlap_score": 0.536,
+        "hybrid_score": 0.37098926305770874,
+        "categories": {
+          "AI Policy": 0.41,
+          "AI Agents": 0.32,
+          "General AI": 0.27
+        }
+      },
+      {
+        "title": "SimMOF: AI agent for Automated MOF Simulations",
+        "vec_score": 0.37586966156959534,
+        "overlap_score": 1.0,
+        "hybrid_score": 0.5303478240966797,
+        "categories": {
+          "AI Agents": 0.38,
+          "LLMs": 0.37,
+          "Data Engineering": 0.25
+        }
+      }
+    ],
+    "method_c_top_10": [
+      {
+        "title": "Phyelds: A Pythonic Framework for Aggregate Computing",
+        "vec_score": 0.38558733463287354,
+        "overlap_score": 1.0,
+        "hybrid_score": 0.534234881401062,
+        "categories": {
+          "Data Engineering": 0.38,
+          "AI Agents": 0.33,
+          "Software Engineering": 0.3
+        }
+      },
+      {
+        "title": "SimMOF: AI agent for Automated MOF Simulations",
+        "vec_score": 0.37586966156959534,
+        "overlap_score": 1.0,
+        "hybrid_score": 0.5303478240966797,
+        "categories": {
+          "AI Agents": 0.38,
+          "LLMs": 0.37,
+          "Data Engineering": 0.25
+        }
+      },
+      {
+        "title": "Reasoning-Driven Synthetic Data Generation and Evaluation",
+        "vec_score": 0.36872920393943787,
+        "overlap_score": 1.0,
+        "hybrid_score": 0.5274916291236877,
+        "categories": {
+          "AI Agents": 0.35,
+          "LLMs": 0.34,
+          "Data Engineering": 0.31
+        }
+      },
+      {
+        "title": "Interview-Informed Generative Agents for Product Discovery: A Validation Study",
+        "vec_score": 0.36347973346710205,
+        "overlap_score": 1.0,
+        "hybrid_score": 0.5253918766975403,
+        "categories": {
+          "LLMs": 0.41,
+          "AI Agents": 0.36,
+          "General AI": 0.23
+        }
+      },
+      {
+        "title": "AEC-Bench: A Multimodal Benchmark for Agentic Systems in Architecture, Engineering, and Construction",
+        "vec_score": 0.361542671918869,
+        "overlap_score": 1.0,
+        "hybrid_score": 0.5246170163154602,
+        "categories": {
+          "AI Agents": 0.37,
+          "LLMs": 0.35,
+          "Data Engineering": 0.28
+        }
+      },
+      {
+        "title": "SciVisAgentBench: A Benchmark for Evaluating Scientific Data Analysis and Visualization Agents",
+        "vec_score": 0.35933053493499756,
+        "overlap_score": 1.0,
+        "hybrid_score": 0.5237321853637695,
+        "categories": {
+          "LLMs": 0.36,
+          "Data Engineering": 0.35,
+          "AI Agents": 0.29
+        }
+      },
+      {
+        "title": "Mimosa Framework: Toward Evolving Multi-Agent Systems for Scientific Research",
+        "vec_score": 0.35538798570632935,
+        "overlap_score": 1.0,
+        "hybrid_score": 0.5221551656723022,
+        "categories": {
+          "AI Agents": 0.48,
+          "LLMs": 0.31,
+          "Data Engineering": 0.21
+        }
+      },
+      {
+        "title": "A Multi-Agent Rhizomatic Pipeline for Non-Linear Literature Analysis",
+        "vec_score": 0.33532047271728516,
+        "overlap_score": 1.0,
+        "hybrid_score": 0.5141281485557556,
+        "categories": {
+          "AI Agents": 0.42,
+          "LLMs": 0.35,
+          "Data Engineering": 0.24
+        }
+      },
+      {
+        "title": "mtslearn: Machine Learning in Python for Medical Time Series",
+        "vec_score": 0.33114388585090637,
+        "overlap_score": 1.0,
+        "hybrid_score": 0.512457549571991,
+        "categories": {
+          "Data Engineering": 0.4,
+          "AI Agents": 0.33,
+          "General AI": 0.27
+        }
+      },
+      {
+        "title": "\"I Just Need GPT to Refine My Prompts\": Rethinking Onboarding and Help-Seeking with Generative 3D Modeling Tools",
+        "vec_score": 0.3042562007904053,
+        "overlap_score": 1.0,
+        "hybrid_score": 0.5017024874687195,
+        "categories": {
+          "LLMs": 0.41,
+          "AI Agents": 0.34,
+          "Computer Vision": 0.25
+        }
+      }
+    ]
+  },
+  {
+    "user_name": "Aakash Belide",
+    "job_title": "Data Scientist Engineer and AI Engineer",
+    "shift_difference": 8,
+    "method_a_top_10": [
+      {
+        "title": "AWS launches frontier agents for security testing and cloud operations",
+        "vec_score": 0.533722996711731,
+        "overlap_score": 0.371,
+        "hybrid_score": 0.3733392059803009,
+        "categories": {
+          "AI Agents": 0.41,
+          "AI Policy": 0.3,
+          "Security": 0.28
+        }
+      },
+      {
+        "title": "Can your governance keep pace with your AI ambitions? AI risk intelligence in the agentic era",
+        "vec_score": 0.5301653146743774,
+        "overlap_score": 0.322,
+        "hybrid_score": 0.3547661304473877,
+        "categories": {
+          "AI Policy": 0.42,
+          "AI Agents": 0.37,
+          "Security": 0.21
+        }
+      },
+      {
+        "title": "Build reliable AI agents with Amazon Bedrock AgentCore Evaluations",
+        "vec_score": 0.5206363201141357,
+        "overlap_score": 0.514,
+        "hybrid_score": 0.4181545376777649,
+        "categories": {
+          "AI Agents": 0.46,
+          "AI Policy": 0.3,
+          "LLMs": 0.24
+        }
+      },
+      {
+        "title": "Downsides of Smartness Across Edge-Cloud Continuum in Modern Industry",
+        "vec_score": 0.48750317096710205,
+        "overlap_score": 0.431,
+        "hybrid_score": 0.37585127353668213,
+        "categories": {
+          "AI Agents": 0.43,
+          "AI Policy": 0.31,
+          "Computer Vision": 0.26
+        }
+      },
+      {
+        "title": "Phyelds: A Pythonic Framework for Aggregate Computing",
+        "vec_score": 0.4747624397277832,
+        "overlap_score": 0.9395999999999999,
+        "hybrid_score": 0.5487649440765381,
+        "categories": {
+          "Data Engineering": 0.38,
+          "AI Agents": 0.33,
+          "Software Engineering": 0.3
+        }
+      },
+      {
+        "title": "AI for Enterprise:  A Practitioner's Guide",
+        "vec_score": 0.4720894694328308,
+        "overlap_score": 0.48,
+        "hybrid_score": 0.3868357837200165,
+        "categories": {
+          "AI Agents": 0.4,
+          "AI Policy": 0.35,
+          "LLMs": 0.25
+        }
+      },
+      {
+        "title": "ELT-Bench-Verified: Benchmark Quality Issues Underestimate AI Agent Capabilities",
+        "vec_score": 0.46949559450149536,
+        "overlap_score": 0.5329999999999999,
+        "hybrid_score": 0.4043482542037964,
+        "categories": {
+          "LLMs": 0.36,
+          "AI Agents": 0.35,
+          "AI Policy": 0.29
+        }
+      },
+      {
+        "title": "Accelerating software delivery with agentic QA automation using Amazon Nova Act",
+        "vec_score": 0.4679616093635559,
+        "overlap_score": 0.8640000000000001,
+        "hybrid_score": 0.519584596157074,
+        "categories": {
+          "AI Agents": 0.5,
+          "LLMs": 0.27,
+          "Software Engineering": 0.22
+        }
+      },
+      {
+        "title": "US Needs to Invest More in AI Buildout, Says Cato\u2019s Frazier",
+        "vec_score": 0.46627527475357056,
+        "overlap_score": 0.328,
+        "hybrid_score": 0.33131012320518494,
+        "categories": {
+          "AI Policy": 0.4,
+          "General AI": 0.32,
+          "Startups": 0.28
+        }
+      },
+      {
+        "title": "AI Has Flooded All the Weather Apps",
+        "vec_score": 0.45834052562713623,
+        "overlap_score": 0.401,
+        "hybrid_score": 0.35368621349334717,
+        "categories": {
+          "General AI": 0.34,
+          "AI Agents": 0.33,
+          "AI Policy": 0.33
+        }
+      }
+    ],
+    "method_c_top_10": [
+      {
+        "title": "Phyelds: A Pythonic Framework for Aggregate Computing",
+        "vec_score": 0.4747624397277832,
+        "overlap_score": 0.9395999999999999,
+        "hybrid_score": 0.5487649440765381,
+        "categories": {
+          "Data Engineering": 0.38,
+          "AI Agents": 0.33,
+          "Software Engineering": 0.3
+        }
+      },
+      {
+        "title": "SimMOF: AI agent for Automated MOF Simulations",
+        "vec_score": 0.4389214515686035,
+        "overlap_score": 0.9443999999999999,
+        "hybrid_score": 0.5361085534095764,
+        "categories": {
+          "AI Agents": 0.38,
+          "LLMs": 0.37,
+          "Data Engineering": 0.25
+        }
+      },
+      {
+        "title": "Mimosa Framework: Toward Evolving Multi-Agent Systems for Scientific Research",
+        "vec_score": 0.4499661922454834,
+        "overlap_score": 0.9275999999999999,
+        "hybrid_score": 0.5346464514732361,
+        "categories": {
+          "AI Agents": 0.48,
+          "LLMs": 0.31,
+          "Data Engineering": 0.21
+        }
+      },
+      {
+        "title": "AEC-Bench: A Multimodal Benchmark for Agentic Systems in Architecture, Engineering, and Construction",
+        "vec_score": 0.41787511110305786,
+        "overlap_score": 0.9491999999999998,
+        "hybrid_score": 0.5293700098991394,
+        "categories": {
+          "AI Agents": 0.37,
+          "LLMs": 0.35,
+          "Data Engineering": 0.28
+        }
+      },
+      {
+        "title": "Accelerating software delivery with agentic QA automation using Amazon Nova Act",
+        "vec_score": 0.4679616093635559,
+        "overlap_score": 0.8640000000000001,
+        "hybrid_score": 0.519584596157074,
+        "categories": {
+          "AI Agents": 0.5,
+          "LLMs": 0.27,
+          "Software Engineering": 0.22
+        }
+      },
+      {
+        "title": "SciVisAgentBench: A Benchmark for Evaluating Scientific Data Analysis and Visualization Agents",
+        "vec_score": 0.3467601537704468,
+        "overlap_score": 0.9672000000000001,
+        "hybrid_score": 0.5072240233421326,
+        "categories": {
+          "LLMs": 0.36,
+          "Data Engineering": 0.35,
+          "AI Agents": 0.29
+        }
+      },
+      {
+        "title": "Reasoning-Driven Synthetic Data Generation and Evaluation",
+        "vec_score": 0.3540889620780945,
+        "overlap_score": 0.9552,
+        "hybrid_score": 0.5059555768966675,
+        "categories": {
+          "AI Agents": 0.35,
+          "LLMs": 0.34,
+          "Data Engineering": 0.31
+        }
+      },
+      {
+        "title": "Performance Evaluation of LLMs in Automated RDF Knowledge Graph Generation",
+        "vec_score": 0.32685917615890503,
+        "overlap_score": 0.984,
+        "hybrid_score": 0.5051436424255371,
+        "categories": {
+          "Data Engineering": 0.45,
+          "LLMs": 0.3,
+          "AI Agents": 0.25
+        }
+      },
+      {
+        "title": "Real-Time Trustworthiness Scoring for LLM Structured Outputs and Data Extraction",
+        "vec_score": 0.31388550996780396,
+        "overlap_score": 0.9683999999999999,
+        "hybrid_score": 0.4944941997528076,
+        "categories": {
+          "Data Engineering": 0.36,
+          "LLMs": 0.35,
+          "AI Agents": 0.29
+        }
+      },
+      {
+        "title": "Build a FinOps agent using Amazon Bedrock AgentCore",
+        "vec_score": 0.38735151290893555,
+        "overlap_score": 0.8844000000000001,
+        "hybrid_score": 0.49448060989379883,
+        "categories": {
+          "AI Agents": 0.35,
+          "Data Engineering": 0.34,
+          "Startups": 0.31
+        }
+      }
+    ]
+  },
+  {
+    "user_name": "Alex VC",
+    "job_title": "AI Policy & Startup Investor",
+    "shift_difference": 7,
+    "method_a_top_10": [
+      {
+        "title": "Can your governance keep pace with your AI ambitions? AI risk intelligence in the agentic era",
+        "vec_score": 0.598429799079895,
+        "overlap_score": 0.42000000000000004,
+        "hybrid_score": 0.4163719117641449,
+        "categories": {
+          "AI Policy": 0.42,
+          "AI Agents": 0.37,
+          "Security": 0.21
+        }
+      },
+      {
+        "title": "Accelerating the next phase of AI",
+        "vec_score": 0.5521426200866699,
+        "overlap_score": 0.41600000000000004,
+        "hybrid_score": 0.4564570486545563,
+        "categories": {
+          "AI Agents": 0.36,
+          "AI Policy": 0.32,
+          "Software Engineering": 0.32
+        }
+      },
+      {
+        "title": "How AI Is Reshaping Private Equity Strategy",
+        "vec_score": 0.5388578176498413,
+        "overlap_score": 0.5980000000000001,
+        "hybrid_score": 0.454843133687973,
+        "categories": {
+          "AI Policy": 0.41,
+          "General AI": 0.3,
+          "Startups": 0.3
+        }
+      },
+      {
+        "title": "AI for Enterprise:  A Practitioner's Guide",
+        "vec_score": 0.5365227460861206,
+        "overlap_score": 0.27999999999999997,
+        "hybrid_score": 0.34260910749435425,
+        "categories": {
+          "AI Agents": 0.4,
+          "AI Policy": 0.35,
+          "LLMs": 0.25
+        }
+      },
+      {
+        "title": "Building an AI powered system for compliance evidence collection",
+        "vec_score": 0.5209013223648071,
+        "overlap_score": 0.384,
+        "hybrid_score": 0.372760534286499,
+        "categories": {
+          "AI Agents": 0.41,
+          "AI Policy": 0.37,
+          "Security": 0.22
+        }
+      },
+      {
+        "title": "Anthropic vs OpenAI: An Investor Shift",
+        "vec_score": 0.487707257270813,
+        "overlap_score": 0.8868000000000001,
+        "hybrid_score": 0.5354628562927246,
+        "categories": {
+          "Startups": 0.38,
+          "Software Engineering": 0.33,
+          "AI Policy": 0.29
+        }
+      },
+      {
+        "title": "Exclusive: Runway launches $10M fund, Builders program to support early-stage AI startups",
+        "vec_score": 0.4722316265106201,
+        "overlap_score": 0.396,
+        "hybrid_score": 0.3574926555156708,
+        "categories": {
+          "Startups": 0.44,
+          "Computer Vision": 0.29,
+          "LLMs": 0.28
+        }
+      },
+      {
+        "title": "MIT Seeks to Unleash Faculty and Student Startups Amid AI Boom",
+        "vec_score": 0.4664172828197479,
+        "overlap_score": 0.5660000000000001,
+        "hybrid_score": 0.41466692090034485,
+        "categories": {
+          "AI Policy": 0.37,
+          "General AI": 0.33,
+          "Startups": 0.3
+        }
+      },
+      {
+        "title": "AI Puts UK\u2019s High-Paid Jobs and Tax Revenues at Risk, Study Says",
+        "vec_score": 0.4654556214809418,
+        "overlap_score": 0.36000000000000004,
+        "hybrid_score": 0.3421822488307953,
+        "categories": {
+          "AI Policy": 0.45,
+          "General AI": 0.32,
+          "AI Agents": 0.23
+        }
+      },
+      {
+        "title": "US Needs to Invest More in AI Buildout, Says Cato\u2019s Frazier",
+        "vec_score": 0.4640878438949585,
+        "overlap_score": 0.5720000000000001,
+        "hybrid_score": 0.4158351421356201,
+        "categories": {
+          "AI Policy": 0.4,
+          "General AI": 0.32,
+          "Startups": 0.28
+        }
+      }
+    ],
+    "method_c_top_10": [
+      {
+        "title": "Anthropic vs OpenAI: An Investor Shift",
+        "vec_score": 0.487707257270813,
+        "overlap_score": 0.8868000000000001,
+        "hybrid_score": 0.5354628562927246,
+        "categories": {
+          "Startups": 0.38,
+          "Software Engineering": 0.33,
+          "AI Policy": 0.29
+        }
+      },
+      {
+        "title": "Hackers slipped a trojan into the code library behind most of the internet. Your team is probably affected",
+        "vec_score": 0.2256934940814972,
+        "overlap_score": 0.6552,
+        "hybrid_score": 0.5095974206924438,
+        "categories": {
+          "Security": 0.5,
+          "Software Engineering": 0.26,
+          "Startups": 0.24
+        }
+      },
+      {
+        "title": "Slack adds 30 AI features to Slackbot, its most ambitious update since the Salesforce acquisition",
+        "vec_score": 0.29594171047210693,
+        "overlap_score": 0.8568000000000001,
+        "hybrid_score": 0.4782567024230957,
+        "categories": {
+          "AI Policy": 0.36,
+          "Startups": 0.34,
+          "Security": 0.3
+        }
+      },
+      {
+        "title": "Accelerating the next phase of AI",
+        "vec_score": 0.5521426200866699,
+        "overlap_score": 0.41600000000000004,
+        "hybrid_score": 0.4564570486545563,
+        "categories": {
+          "AI Agents": 0.36,
+          "AI Policy": 0.32,
+          "Software Engineering": 0.32
+        }
+      },
+      {
+        "title": "How AI Is Reshaping Private Equity Strategy",
+        "vec_score": 0.5388578176498413,
+        "overlap_score": 0.5980000000000001,
+        "hybrid_score": 0.454843133687973,
+        "categories": {
+          "AI Policy": 0.41,
+          "General AI": 0.3,
+          "Startups": 0.3
+        }
+      },
+      {
+        "title": "A dot a day keeps the clutter away",
+        "vec_score": 0.1089136153459549,
+        "overlap_score": 0.7764,
+        "hybrid_score": 0.4453054368495941,
+        "categories": {
+          "Startups": 0.45,
+          "Security": 0.33,
+          "Software Engineering": 0.22
+        }
+      },
+      {
+        "title": "The Trump administration&#8217;s antitrust honeymoon is over",
+        "vec_score": 0.2412620335817337,
+        "overlap_score": 0.9000000000000001,
+        "hybrid_score": 0.4415048062801361,
+        "categories": {
+          "AI Policy": 0.45,
+          "Startups": 0.34,
+          "Security": 0.21
+        }
+      },
+      {
+        "title": "It\u2019s not your imagination: AI seed startups are commanding higher valuations",
+        "vec_score": 0.41056135296821594,
+        "overlap_score": 0.661,
+        "hybrid_score": 0.42557457089424133,
+        "categories": {
+          "Startups": 0.53,
+          "General AI": 0.24,
+          "AI Policy": 0.23
+        }
+      },
+      {
+        "title": "Social media firms must better enforce Australia under-16 ban, watchdog says",
+        "vec_score": 0.26774710416793823,
+        "overlap_score": 0.8160000000000001,
+        "hybrid_score": 0.42269885540008545,
+        "categories": {
+          "AI Policy": 0.45,
+          "Security": 0.35,
+          "Startups": 0.2
+        }
+      },
+      {
+        "title": "A new way to measure poverty shows the US falling behind Europe",
+        "vec_score": 0.18608370423316956,
+        "overlap_score": 0.8592000000000001,
+        "hybrid_score": 0.4195534884929657,
+        "categories": {
+          "AI Policy": 0.39,
+          "Startups": 0.32,
+          "Security": 0.29
+        }
+      }
+    ]
+  }
+]
